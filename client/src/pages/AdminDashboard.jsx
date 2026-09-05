@@ -330,7 +330,7 @@ const handleCreateProduct = async (e) => {
             <span className="text-[11px] text-[#00714C] font-bold">● 8 Machines Online</span>
           </div>
           <h1 className="font-['Cinzel'] text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">
-            Print Farm & Order Operations
+            ACET CAMRI
           </h1>
           <p className="text-xs text-gray-600 mt-0.5">
             Logged in as: <strong className="text-gray-900">{user?.name || 'Club Lead'}</strong> ({user?.email}) • Kinathukadavu Main Lab
