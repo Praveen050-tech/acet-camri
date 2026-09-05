@@ -119,6 +119,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, message: err.message || 'Internal Server Error' });
 });
 
+if (!process.env.VERCEL) {
 app.listen(PORT, () => {
   console.log(`\n======================================================`);
   console.log(`⚡  ACET 3D Supabase Database Server running on port ${PORT}`);
@@ -127,4 +128,7 @@ app.listen(PORT, () => {
   console.log(`🎓 Institution: Akshaya College (acetcbe.edu.in • TNEA: 2763)`);
   console.log(`🚀 Dept: Computer Science & Engineering`);
   console.log(`======================================================\n`);
-});
+  });
+}
+
+export default app;
