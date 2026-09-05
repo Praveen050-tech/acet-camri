@@ -239,21 +239,21 @@ router.post('/login', async (req, res) => {
           });
         }
       }
-    } else {
-      // Fallback local memory admin if Supabase is offline
-      if ((email === 'admin@acetcbe.edu.in' || email === 'admin') && password === 'acet3d2026') {
-        return res.json({
-          success: true,
-          data: {
-            _id: 'admin_acet_cse_01',
-            name: 'ACET 3D Club Lead',
-            email: 'admin@acetcbe.edu.in',
-            role: 'admin',
-            department: 'Department of Computer Science and Engineering',
-            token: generateToken('admin_acet_cse_01', 'admin', 'admin@acetcbe.edu.in')
-          }
-        });
-      }
+    }
+    
+    // Fallback local memory admin (always allow this for ACET)
+    if ((email === 'admin@acetcbe.edu.in' || email === 'admin') && password === 'acet3d2026') {
+      return res.json({
+        success: true,
+        data: {
+          _id: 'admin_acet_cse_01',
+          name: 'ACET 3D Club Lead',
+          email: 'admin@acetcbe.edu.in',
+          role: 'admin',
+          department: 'Department of Computer Science and Engineering',
+          token: generateToken('admin_acet_cse_01', 'admin', 'admin@acetcbe.edu.in')
+        }
+      });
     }
 
     res.status(401).json({ success: false, message: 'Invalid admin credentials' });
