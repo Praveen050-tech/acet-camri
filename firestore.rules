@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if request is from an authenticated admin
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
+    }
+
+    // 1. Products: Publicly readable by all buyers, writable only by authenticated admins
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 2. Reviews: Publicly readable, write/create by authenticated admins
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if isAdmin();
+    }
+
+    // 3. Orders: NEVER directly accessible from frontend clients.
+    // Must go through the Express backend API via Firebase Admin SDK.
+    match /orders/{orderId} {
+      allow read, write: if false;
+    }
+
+    // 4. Custom CAD Requests: NEVER directly accessible from frontend clients.
+    // Must go through the Express backend API via Firebase Admin SDK.
+    match /customRequests/{requestId} {
+      allow read, write: if false;
+    }
+  }
+}

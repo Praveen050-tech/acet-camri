@@ -1,0 +1,350 @@
+/* ==========================================================================
+   ACET 3D — Red Wine & Marble Palette & Design System
+   Theme: Luxury Red Wine & Carrara/Calacatta Marble with Imperial Gold Accents
+   Institutional Integration: Akshaya College of Engineering and Technology (acetcbe.edu.in)
+   ========================================================================== */
+
+:root {
+  /* Rich Red Wine & Bordeaux Luxury Tones */
+  --wine-950: #14020a;
+  --wine-900: #240411;
+  --wine-850: #36071a;
+  --wine-800: #4a0a24;
+  --wine-700: #660e32;
+  --wine-600: #881444;
+  --wine-500: #ad1c59;
+  --wine-400: #d12e73;
+  --wine-glass: rgba(54, 7, 26, 0.85);
+  --wine-glass-heavy: rgba(36, 4, 17, 0.95);
+
+  /* Carrara Marble, Alabaster & Cream Tones */
+  --marble-base: #1c030d;
+  --marble-surface: #2b0615;
+  --marble-card: rgba(65, 9, 32, 0.72);
+  --marble-card-hover: rgba(90, 13, 45, 0.9);
+  --marble-white: #fcf9f5;
+  --marble-creme: #f5ece1;
+  --marble-stone: #ede4db;
+  --marble-vein: rgba(212, 175, 55, 0.2);
+  --marble-slate: #c4b5bc;
+
+  /* Imperial Gold & Gilded Brass */
+  --gold-primary: #d4af37;
+  --gold-light: #f7e7a9;
+  --gold-dark: #aa7a1e;
+  --gold-gradient: linear-gradient(135deg, #f3d57d 0%, #d4af37 50%, #996515 100%);
+  --wine-gradient: linear-gradient(135deg, #5c0b2d 0%, #881444 50%, #b31d5b 100%);
+  --marble-gradient: linear-gradient(135deg, #2d0617 0%, #440a23 50%, #20040f 100%);
+
+  /* Borders & Accents */
+  --border-subtle: rgba(212, 175, 55, 0.2);
+  --border-medium: rgba(212, 175, 55, 0.35);
+  --border-gold: #d4af37;
+  --border-wine: rgba(173, 28, 89, 0.45);
+
+  /* Text Colors */
+  --text-primary: #fcf9f5;
+  --text-secondary: #d1c0c9;
+  --text-muted: #9c8491;
+  --text-gold: #e5c158;
+
+  /* Badges */
+  --badge-sale: #a81c3c;
+  --badge-new: #d4af37;
+  --badge-campus: #10b981;
+  --star-color: #f5b041;
+
+  /* Typography */
+  --font-display: 'Cinzel', 'Space Grotesk', -apple-system, serif;
+  --font-heading: 'Outfit', 'Poppins', sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(26, 5, 13, 0.6);
+  --shadow-lg: 0 16px 40px rgba(15, 7, 11, 0.85);
+  --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.22);
+  --shadow-wine: 0 0 30px rgba(139, 30, 75, 0.3);
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s var(--ease-smooth);
+  --transition-normal: 0.35s var(--ease-smooth);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --max-width: 1440px;
+}
+
+/* Reset & Foundation */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--marble-base);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  background-color: var(--marble-base);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Luxury Marble Veined Atmospheric Background (Rich Red Wine & Carrara Marble) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    radial-gradient(circle at 20% 15%, rgba(136, 20, 68, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 85% 30%, rgba(92, 11, 45, 0.5) 0%, transparent 60%),
+    radial-gradient(circle at 50% 80%, rgba(173, 28, 89, 0.3) 0%, transparent 70%),
+    linear-gradient(180deg, #240411 0%, #16020a 50%, #0d0106 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.font-serif-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+}
+
+h1 { font-size: clamp(2.3rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.7rem); }
+h3 { font-size: clamp(1.25rem, 2.2vw, 1.75rem); }
+h4 { font-size: 1.15rem; }
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-primary);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-pad {
+  padding: 5.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 3.5rem 0;
+  }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-title-wrap .sub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--border-gold);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.section-title-wrap p {
+  margin-top: 0.5rem;
+  font-size: 1.02rem;
+  max-width: 620px;
+  color: var(--text-secondary);
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid var(--border-medium);
+  transition: all var(--transition-normal);
+}
+
+.view-all-link:hover {
+  background: rgba(212, 175, 55, 0.16);
+  border-color: var(--gold-primary);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Glassmorphic & Marble Panels */
+.glass-panel {
+  background: var(--marble-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+/* Luxury Red Wine Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--wine-gradient);
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 4px 20px rgba(84, 13, 42, 0.4), 0 0 15px rgba(212, 175, 55, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #6e1338 0%, #aa2a5e 100%);
+  border-color: var(--gold-primary);
+  box-shadow: 0 6px 28px rgba(139, 30, 75, 0.6), var(--shadow-gold);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #1a050d;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+}
+
+.btn-gold:hover {
+  box-shadow: 0 6px 28px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+  color: #0f070b;
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Toast Notifications */
+#toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.4rem;
+  background: rgba(35, 12, 22, 0.96);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  animation: toastIn 0.35s var(--ease-smooth) forwards;
+  max-width: 400px;
+}
+
+.toast.toast-leave {
+  animation: toastOut 0.3s var(--ease-smooth) forwards;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes toastOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-10px) scale(0.95); }
+}

@@ -1,0 +1,713 @@
+{
+  "products": [
+    {
+      "id": "acet-crest-monolith",
+      "name": "ACET Official Crest & Institutional Seal Monolith",
+      "title": "ACET Official Crest & Institutional Seal Monolith",
+      "slug": "acet-crest-monolith",
+      "sku": "ACET-CRST-001",
+      "category": "CSE Academic Models",
+      "categoryLabel": "College Merch",
+      "subcategory": "Institutional Identity",
+      "salePrice": 899,
+      "basePrice": 1299,
+      "regularPrice": 1299,
+      "rating": 4.9,
+      "ratingAvg": 4.9,
+      "ratingCount": 38,
+      "reviewCount": 38,
+      "stock": 45,
+      "printTimeHours": 6,
+      "weightGrams": 160,
+      "isTrending": true,
+      "isBestSeller": true,
+      "badge": "OFFICIAL MERCH",
+      "images": [
+        {
+          "id": "img-crest-0",
+          "url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80",
+          "position": 0
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
+      "description": "Precision architectural crest of Akshaya College of Engineering & Technology. High-density resin monolithic block with 24K gold foil trim and debossed motto.",
+      "detailedStory": "Engineered as an emblem of excellence for Akshaya students, faculty, and visiting dignitaries. Each piece is cured under calibrated 405nm UV chambers at our Kinathukadavu maker facility.",
+      "careInstructions": "Clean with dry microfiber cloth. Keep out of direct sunlight exceeding 60°C.",
+      "materials": [
+        {
+          "id": "mat-crest-0",
+          "name": "PLA Pro (Matte Burgundy)",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-crest-1",
+          "name": "Cold-Cast Brass Resin",
+          "priceDelta": 450
+        },
+        {
+          "id": "mat-crest-2",
+          "name": "Carrara Marble Composite",
+          "priceDelta": 800
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-crest-0",
+          "label": "Standard Desktop (10cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-crest-1",
+          "label": "Executive Pedestal (18cm)",
+          "priceDelta": 500
+        }
+      ],
+      "campusPickupAvailable": true,
+      "createdAt": "2026-09-05T06:35:58.868Z",
+      "updatedAt": "2026-09-05T06:35:58.868Z",
+      "stockQuantity": 45,
+      "isActive": true
+    },
+    {
+      "id": "planetary-reduction-gearbox",
+      "name": "4:1 Planetary Reduction Gearbox (Print-in-Place)",
+      "title": "4:1 Planetary Reduction Gearbox (Print-in-Place)",
+      "slug": "planetary-reduction-gearbox",
+      "sku": "ACET-ENG-002",
+      "category": "CSE Academic Models",
+      "categoryLabel": "Engineering Models",
+      "subcategory": "Kinematics & Machine Design",
+      "salePrice": 1149,
+      "basePrice": 1499,
+      "regularPrice": 1499,
+      "rating": 5,
+      "ratingAvg": 5,
+      "ratingCount": 29,
+      "reviewCount": 29,
+      "stock": 25,
+      "printTimeHours": 8,
+      "weightGrams": 220,
+      "isTrending": true,
+      "isBestSeller": true,
+      "badge": "PRINT-IN-PLACE",
+      "images": [
+        {
+          "id": "img-gear-0",
+          "url": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
+          "position": 0
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+      "description": "Fully functional 4:1 epicyclic reduction gear assembly printed in a single pass without assembly. Demonstrates kinematic engineering mechanics with zero backlash.",
+      "detailedStory": "Engineered and validated by student innovators of the Department of Computer Science and Engineering (CSE). Demonstrates precision mechanical tolerances for laboratory viva and robotics prototyping.",
+      "careInstructions": "Use dry silicone lubricant for continuous high-speed rotation demonstration.",
+      "materials": [
+        {
+          "id": "mat-gear-0",
+          "name": "PETG High-Toughness",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-gear-1",
+          "name": "Carbon Fiber Nylon (PA12-CF)",
+          "priceDelta": 600
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-gear-0",
+          "label": "100mm Ratio Test",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-gear-1",
+          "label": "150mm Demonstration Rig",
+          "priceDelta": 400
+        }
+      ],
+      "campusPickupAvailable": true,
+      "createdAt": "2026-09-05T06:36:00.416Z",
+      "updatedAt": "2026-09-05T06:36:00.416Z",
+      "stockQuantity": 25,
+      "isActive": true
+    },
+    {
+      "id": "voronoi-adiyogi-shiva",
+      "name": "Computational Voronoi Adiyogi Shiva Monolith",
+      "title": "Computational Voronoi Adiyogi Shiva Monolith",
+      "slug": "voronoi-adiyogi-shiva",
+      "sku": "ACET-FIG-003",
+      "category": "Figurines & Collectibles",
+      "categoryLabel": "Spiritual Figurines",
+      "subcategory": "Computational Sacred Art",
+      "salePrice": 3299,
+      "basePrice": 4299,
+      "regularPrice": 4299,
+      "rating": 5,
+      "ratingAvg": 5,
+      "ratingCount": 64,
+      "reviewCount": 64,
+      "stock": 12,
+      "printTimeHours": 14,
+      "weightGrams": 420,
+      "isTrending": true,
+      "isBestSeller": true,
+      "badge": "50-MICRON SLA",
+      "images": [
+        {
+          "id": "img-shiva-0",
+          "url": "https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=800&auto=format&fit=crop&q=80",
+          "position": 0
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=800&auto=format&fit=crop&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=800&auto=format&fit=crop&q=80",
+      "description": "Algorithmic Voronoi mathematical tessellation sculpture of Lord Shiva. Cast from Carrara marble mineral composite with 50-micron SLA surface resolution.",
+      "detailedStory": "Computational geometry generated via custom procedural Voronoi partitioning algorithms developed at the CSE 3D Lab. Finished with artisan mineral wash.",
+      "careInstructions": "Wipe gently with damp soft cloth. Sealed with satin polyurethane finish.",
+      "materials": [
+        {
+          "id": "mat-shiva-0",
+          "name": "Carrara Marble SLA Resin",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-shiva-1",
+          "name": "Hand-Gilded Alabaster",
+          "priceDelta": 950
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-shiva-0",
+          "label": "Pooja Shrine (14cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-shiva-1",
+          "label": "Centerpiece (22cm)",
+          "priceDelta": 900
+        }
+      ],
+      "campusPickupAvailable": true,
+      "createdAt": "2026-09-05T06:36:00.641Z",
+      "updatedAt": "2026-09-05T06:36:00.641Z",
+      "stockQuantity": 12,
+      "isActive": true
+    },
+    {
+      "id": "fibonacci-spiral-desk-lamp",
+      "name": "Fibonacci Spiral Geodesic Ambient Desk Lamp",
+      "title": "Fibonacci Spiral Geodesic Ambient Desk Lamp",
+      "slug": "fibonacci-spiral-desk-lamp",
+      "sku": "ACET-DEC-004",
+      "category": "Home & Desk Décor",
+      "categoryLabel": "Home & Décor",
+      "subcategory": "Parametric Lighting",
+      "salePrice": 1599,
+      "basePrice": 2199,
+      "regularPrice": 2199,
+      "rating": 4.8,
+      "ratingAvg": 4.8,
+      "ratingCount": 22,
+      "reviewCount": 22,
+      "stock": 18,
+      "printTimeHours": 11,
+      "weightGrams": 310,
+      "isTrending": true,
+      "isBestSeller": false,
+      "badge": "WARM LED INCLUDED",
+      "images": [
+        {
+          "id": "img-lamp-0",
+          "url": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&auto=format&fit=crop&q=80",
+          "position": 0
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&auto=format&fit=crop&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&auto=format&fit=crop&q=80",
+      "description": "Golden-ratio mathematical lattice lampshade with warm ambient LED diffuser base. Casts geometric shadow patterns engineered by CSE additive manufacturing team.",
+      "detailedStory": "Derived from Fibonacci sequence spiraling phyllotaxis equations. Optimizes light diffusion while projecting geometric shadows.",
+      "careInstructions": "Use only with included 5W low-heat LED USB light module.",
+      "materials": [
+        {
+          "id": "mat-lamp-0",
+          "name": "Translucent White PLA",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-lamp-1",
+          "name": "Amber Matte Filament",
+          "priceDelta": 200
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-lamp-0",
+          "label": "Desk Compact (16cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-lamp-1",
+          "label": "Floor Standing (28cm)",
+          "priceDelta": 700
+        }
+      ],
+      "campusPickupAvailable": true,
+      "createdAt": "2026-09-05T06:36:01.112Z",
+      "updatedAt": "2026-09-05T06:36:01.112Z",
+      "stockQuantity": 18,
+      "isActive": true
+    },
+    {
+      "id": "akshaya-techday-trophy",
+      "name": "Akshaya Techday & Symposium Champion Trophy",
+      "title": "Akshaya Techday & Symposium Champion Trophy",
+      "slug": "akshaya-techday-trophy",
+      "sku": "ACET-FEST-005",
+      "category": "Event & Fest Merchandise",
+      "categoryLabel": "Fest Merch",
+      "subcategory": "Institutional Trophies & Honors",
+      "salePrice": 850,
+      "basePrice": 1200,
+      "regularPrice": 1200,
+      "rating": 4.9,
+      "ratingAvg": 4.9,
+      "ratingCount": 17,
+      "reviewCount": 17,
+      "stock": 40,
+      "printTimeHours": 7,
+      "weightGrams": 190,
+      "isTrending": false,
+      "isBestSeller": true,
+      "badge": "CUSTOM ENGRAVABLE",
+      "images": [
+        {
+          "id": "img-trophy-0",
+          "url": "https://images.unsplash.com/photo-1569517282132-25d22f4573e6?w=800&auto=format&fit=crop&q=80",
+          "position": 0
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1569517282132-25d22f4573e6?w=800&auto=format&fit=crop&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1569517282132-25d22f4573e6?w=800&auto=format&fit=crop&q=80",
+      "description": "Official Department of Computer Science and Engineering annual technical symposium trophy. Dual-tone metallic gold and satin emerald finish.",
+      "detailedStory": "Commissioned for college symposia, hackathons, and academic honors. Features debossed college monogram and customizable winner plaque plate.",
+      "careInstructions": "Handle with clean hands. Dust with soft feather brush.",
+      "materials": [
+        {
+          "id": "mat-trophy-0",
+          "name": "Silk Gold PLA + Emerald Base",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-trophy-0",
+          "label": "Winner (22cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-trophy-1",
+          "label": "Runner-up (18cm)",
+          "priceDelta": -200
+        }
+      ],
+      "campusPickupAvailable": true,
+      "createdAt": "2026-09-05T06:36:01.297Z",
+      "updatedAt": "2026-09-05T06:36:01.297Z",
+      "stockQuantity": 40,
+      "isActive": true
+    },
+    {
+      "id": "cse-alumni-keepsake-penstand",
+      "name": "CSE Department 3D Alumni Keepsake Pen Stand",
+      "title": "CSE Department 3D Alumni Keepsake Pen Stand",
+      "slug": "cse-alumni-keepsake-penstand",
+      "sku": "ACET-ALUM-006",
+      "category": "Keychains & Small Gifts",
+      "categoryLabel": "Alumni Gifting",
+      "subcategory": "Alumni Memorabilia",
+      "salePrice": 599,
+      "basePrice": 899,
+      "regularPrice": 899,
+      "rating": 5,
+      "ratingAvg": 5,
+      "ratingCount": 31,
+      "reviewCount": 31,
+      "stock": 50,
+      "printTimeHours": 4,
+      "weightGrams": 120,
+      "isTrending": true,
+      "isBestSeller": true,
+      "badge": "ALUMNI SPECIAL",
+      "images": [
+        {
+          "id": "img-penstand-0",
+          "url": "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=800&auto=format&fit=crop&q=80",
+          "position": 0
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=800&auto=format&fit=crop&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=800&auto=format&fit=crop&q=80",
+      "description": "Precision wireframe geometric desktop organizer featuring embossed Department of Computer Science and Engineering identity and smartphone docking cradle.",
+      "detailedStory": "A tribute for graduating engineers and distinguished alumni of the CSE department. Practical, elegant, and permanently debossed.",
+      "careInstructions": "Avoid immersion in water. Oil wood-fill PLA lightly once a year.",
+      "materials": [
+        {
+          "id": "mat-penstand-0",
+          "name": "Walnut Wood-Fill PLA",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-penstand-1",
+          "name": "Matte Forest Green PLA",
+          "priceDelta": -50
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-penstand-0",
+          "label": "Desktop Standard (12cm)",
+          "priceDelta": 0
+        }
+      ],
+      "campusPickupAvailable": true,
+      "createdAt": "2026-09-05T06:36:01.483Z",
+      "updatedAt": "2026-09-05T06:36:01.483Z",
+      "stockQuantity": 50,
+      "isActive": true
+    },
+    {
+      "id": "am-training-registration",
+      "name": "Additive Manufacturing Training Program Registration",
+      "slug": "am-training-registration",
+      "description": "3-day In-house Student Training Program on Additive Manufacturing at CAMRI (9, 10 & 11 September 2026). Hands-on Training with Bambu Lab H2C, Multi-Material & Multi-Color Printing, Design to Print Workflow, Real-world Applications & Prototyping, Live Demonstrations & Practical Sessions. For In-house Students Only.",
+      "category": "Training",
+      "basePrice": 500,
+      "salePrice": 500,
+      "stockQuantity": 100,
+      "stock": 100,
+      "images": [
+        {
+          "id": "img-training-0",
+          "url": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-none",
+          "name": "N/A",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-none",
+          "label": "Standard Ticket",
+          "priceDelta": 0
+        }
+      ],
+      "printTimeHours": 2,
+      "weightGrams": 50,
+      "careInstructions": "Bring your student ID card.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-05T06:44:59.392Z",
+      "updatedAt": "2026-09-05T06:44:59.392Z"
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "ACET-849201",
+      "customer": {
+        "name": "S. Manikandan",
+        "email": "manikandan.s@acetcbe.edu.in",
+        "phone": "+91 97894 44111",
+        "address": "CSE Smart Lab, Akshaya College, Kinathukadavu"
+      },
+      "items": [
+        {
+          "productId": "acet-crest-monolith",
+          "name": "ACET Official Crest & Institutional Seal Monolith",
+          "quantity": 1,
+          "material": "Carrara Marble Composite",
+          "size": "Executive Pedestal (18cm)",
+          "priceAtPurchase": 1399
+        }
+      ],
+      "totalAmount": 1399,
+      "paymentStatus": "paid",
+      "paymentId": "pay_rzp_live_948201",
+      "status": "Printing",
+      "deliveryMethod": "campus_pickup",
+      "customerName": "S. Manikandan",
+      "contact": "+91 97894 44111",
+      "total": 1399,
+      "progressPercent": 65,
+      "createdAt": "2026-09-03T14:30:00.000Z",
+      "updatedAt": "2026-09-04T08:00:00.000Z"
+    },
+    {
+      "orderId": "ACET-484452",
+      "customer": {
+        "name": "Karthik Subramanian",
+        "email": "karthik.s@acetcbe.edu.in",
+        "phone": "+91 97894 44111",
+        "address": "CSE Smart Lab, Akshaya College, Kinathukadavu"
+      },
+      "items": [
+        {
+          "productId": "cse-iot-case-1788502255874",
+          "name": "CSE IoT Microcontroller Cluster Enclosure",
+          "quantity": 1,
+          "material": "PLA Pro",
+          "size": "Standard (100mm)",
+          "priceAtPurchase": 1199
+        }
+      ],
+      "totalAmount": 1199,
+      "paymentStatus": "paid",
+      "paymentId": "pay_1788502256165",
+      "status": "Placed",
+      "deliveryMethod": "campus_pickup",
+      "createdAt": "2026-09-04T06:10:56.165Z",
+      "updatedAt": "2026-09-04T06:10:56.165Z"
+    },
+    {
+      "orderId": "ACET-492853",
+      "customer": {
+        "name": "Karthik Subramanian",
+        "email": "karthik.s@acetcbe.edu.in",
+        "phone": "+91 97894 44111",
+        "address": "CSE Smart Lab, Akshaya College, Kinathukadavu"
+      },
+      "items": [
+        {
+          "productId": "cse-iot-case-1788507071594",
+          "name": "CSE IoT Microcontroller Cluster Enclosure",
+          "quantity": 1,
+          "material": "PLA Pro",
+          "size": "Standard (100mm)",
+          "priceAtPurchase": 1199
+        }
+      ],
+      "totalAmount": 1199,
+      "paymentStatus": "paid",
+      "paymentId": "pay_1788507072128",
+      "status": "Placed",
+      "deliveryMethod": "campus_pickup",
+      "createdAt": "2026-09-04T07:31:12.128Z",
+      "updatedAt": "2026-09-04T07:31:12.128Z"
+    },
+    {
+      "orderId": "ACET-849342",
+      "customer": {
+        "name": "Karthik Subramanian",
+        "email": "karthik.s@acetcbe.edu.in",
+        "phone": "+91 97894 44111",
+        "address": "CSE Smart Lab, Akshaya College, Kinathukadavu"
+      },
+      "items": [
+        {
+          "productId": "cse-iot-case-1788507871385",
+          "name": "CSE IoT Microcontroller Cluster Enclosure",
+          "quantity": 1,
+          "material": "PLA Pro",
+          "size": "Standard (100mm)",
+          "priceAtPurchase": 1199
+        }
+      ],
+      "totalAmount": 1199,
+      "paymentStatus": "paid",
+      "paymentId": "pay_1788507871406",
+      "status": "Placed",
+      "deliveryMethod": "campus_pickup",
+      "createdAt": "2026-09-04T07:44:31.406Z",
+      "updatedAt": "2026-09-04T07:44:31.406Z"
+    },
+    {
+      "orderId": "ACET-411849",
+      "customer": {
+        "name": "Karthik Subramanian",
+        "email": "karthik.s@acetcbe.edu.in",
+        "phone": "+91 97894 44111",
+        "address": "CSE Smart Lab, Akshaya College, Kinathukadavu"
+      },
+      "items": [
+        {
+          "productId": "cse-iot-case-1788508183235",
+          "name": "CSE IoT Microcontroller Cluster Enclosure",
+          "quantity": 1,
+          "material": "PLA Pro",
+          "size": "Standard (100mm)",
+          "priceAtPurchase": 1199
+        }
+      ],
+      "totalAmount": 1199,
+      "paymentStatus": "paid",
+      "paymentId": "pay_1788508183246",
+      "status": "Placed",
+      "deliveryMethod": "campus_pickup",
+      "createdAt": "2026-09-04T07:49:43.246Z",
+      "updatedAt": "2026-09-04T07:49:43.246Z"
+    },
+    {
+      "orderId": "ACET-674912",
+      "customer": {
+        "name": "Karthik Subramanian",
+        "email": "karthik.s@acetcbe.edu.in",
+        "phone": "+91 97894 44111",
+        "address": "CSE Smart Lab, Akshaya College, Kinathukadavu"
+      },
+      "items": [
+        {
+          "productId": "cse-iot-case-1788508377605",
+          "name": "CSE IoT Microcontroller Cluster Enclosure",
+          "quantity": 1,
+          "material": "PLA Pro",
+          "size": "Standard (100mm)",
+          "priceAtPurchase": 1199
+        }
+      ],
+      "totalAmount": 1199,
+      "paymentStatus": "paid",
+      "paymentId": "pay_1788508378186",
+      "status": "Placed",
+      "deliveryMethod": "campus_pickup",
+      "createdAt": "2026-09-04T07:52:58.186Z",
+      "updatedAt": "2026-09-04T07:52:58.186Z"
+    },
+    {
+      "orderId": "ACET-247359",
+      "customer": {
+        "name": "S. Manikandan",
+        "email": "student@acetcbe.edu.in",
+        "phone": "+91 97894 44111",
+        "address": "Kinathukadavu Main Campus, Coimbatore"
+      },
+      "items": [
+        {
+          "productId": "acet-crest-monolith",
+          "name": "ACET Official Crest & Institutional Seal Monolith",
+          "quantity": 1,
+          "material": "PLA Pro (Matte Burgundy)",
+          "size": "Standard (100mm)",
+          "priceAtPurchase": 899
+        }
+      ],
+      "totalAmount": 899,
+      "paymentStatus": "paid",
+      "paymentId": "rzp_pay_1788508621881",
+      "status": "Placed",
+      "deliveryMethod": "campus_pickup",
+      "createdAt": "2026-09-04T07:57:01.883Z",
+      "updatedAt": "2026-09-04T07:57:01.883Z"
+    }
+  ],
+  "customRequests": [
+    {
+      "requestId": "ACET-CAD-10294",
+      "name": "A. Praveen Kumar",
+      "email": "praveen.a@acetcbe.edu.in",
+      "phone": "+91 94432 55678",
+      "referenceImageUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800",
+      "desiredSize": "160x140x90 mm",
+      "material": "PA12 Carbon-Fiber Nylon",
+      "budgetRange": "₹1500 - ₹2500",
+      "deadline": "Within 4 days",
+      "notes": "Custom quadcopter drone arm chassis for CSE IoT Lab autonomous drone project.",
+      "status": "reviewing",
+      "createdAt": "2026-09-03T16:00:00.000Z"
+    },
+    {
+      "requestId": "ACET-CAD-46512",
+      "name": "Ananya S.",
+      "email": "ananya.s@acetcbe.edu.in",
+      "phone": "+91 98422 12345",
+      "referenceImageUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800",
+      "desiredSize": "150x120x80 mm",
+      "material": "Carbon Fiber Nylon",
+      "budgetRange": "₹1200 - ₹2000",
+      "deadline": "Within 3 days",
+      "notes": "Please slice with 0.12mm layer height for aerodynamic model testing.",
+      "status": "new",
+      "createdAt": "2026-09-04T06:10:56.418Z"
+    },
+    {
+      "requestId": "ACET-CAD-47723",
+      "name": "Ananya S.",
+      "email": "ananya.s@acetcbe.edu.in",
+      "phone": "+91 98422 12345",
+      "referenceImageUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800",
+      "desiredSize": "150x120x80 mm",
+      "material": "Carbon Fiber Nylon",
+      "budgetRange": "₹1200 - ₹2000",
+      "deadline": "Within 3 days",
+      "notes": "Please slice with 0.12mm layer height for aerodynamic model testing.",
+      "status": "new",
+      "createdAt": "2026-09-04T07:31:12.344Z"
+    },
+    {
+      "requestId": "ACET-CAD-54696",
+      "name": "Ananya S.",
+      "email": "ananya.s@acetcbe.edu.in",
+      "phone": "+91 98422 12345",
+      "referenceImageUrl": "custom_model.stl",
+      "desiredSize": "150x120x80 mm",
+      "material": "Carbon Fiber Nylon",
+      "budgetRange": "₹1200 - ₹2000",
+      "deadline": "Within 3 days",
+      "notes": "Please slice with 0.12mm layer height for aerodynamic model testing.",
+      "status": "new",
+      "createdAt": "2026-09-04T07:44:31.415Z"
+    },
+    {
+      "requestId": "ACET-CAD-37677",
+      "name": "Ananya S.",
+      "email": "ananya.s@acetcbe.edu.in",
+      "phone": "+91 98422 12345",
+      "referenceImageUrl": "custom_model.stl",
+      "desiredSize": "150x120x80 mm",
+      "material": "Carbon Fiber Nylon",
+      "budgetRange": "₹1200 - ₹2000",
+      "deadline": "Within 3 days",
+      "notes": "Please slice with 0.12mm layer height for aerodynamic model testing.",
+      "status": "new",
+      "createdAt": "2026-09-04T07:49:43.254Z"
+    },
+    {
+      "requestId": "ACET-CAD-12080",
+      "name": "Ananya S.",
+      "email": "ananya.s@acetcbe.edu.in",
+      "phone": "+91 98422 12345",
+      "referenceImageUrl": "custom_model.stl",
+      "desiredSize": "150x120x80 mm",
+      "material": "Carbon Fiber Nylon",
+      "budgetRange": "₹1200 - ₹2000",
+      "deadline": "Within 3 days",
+      "notes": "Please slice with 0.12mm layer height for aerodynamic model testing.",
+      "status": "new",
+      "createdAt": "2026-09-04T07:52:58.555Z"
+    }
+  ],
+  "reviews": [
+    {
+      "productId": "acet-crest-monolith",
+      "customerName": "K. Vignesh (21CS045)",
+      "rating": 5,
+      "comment": "The Carrara marble finish looks magnificent on my study desk. Precision is top notch.",
+      "createdAt": "2026-09-01T12:00:00.000Z"
+    },
+    {
+      "productId": "planetary-reduction-gearbox",
+      "customerName": "Prof. Ramesh N. (Faculty, CSE)",
+      "rating": 5,
+      "comment": "Smooth mechanical rotation straight off the print bed with zero assembly. Excellent demonstration model for student projects.",
+      "createdAt": "2026-09-02T15:30:00.000Z"
+    }
+  ]
+}

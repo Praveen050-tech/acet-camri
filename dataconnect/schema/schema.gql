@@ -1,0 +1,169 @@
+# ACET 3D — Official Firebase Data Connect GraphQL Schema
+# Department of Computer Science and Engineering
+# Akshaya College of Engineering & Technology
+
+type User @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  email: String!
+  name: String!
+  role: String! @default(value: "customer") # 'customer' | 'admin' | 'club_lead'
+  createdAt: Timestamp! @default(expr: "request.time")
+}
+
+type Address @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  user: User
+  fullName: String!
+  phone: String!
+  streetAddress: String!
+  city: String!
+  state: String!
+  postalCode: String!
+  country: String! @default(value: "India")
+  isDefault: Boolean @default(value: false)
+}
+
+# ==========================================
+# CORRECTED PRODUCT TYPE & RELATED TABLES
+# ==========================================
+
+type Product @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  name: String!
+  slug: String!
+  description: String!
+  category: String!   # 'Figurines & Collectibles' | 'Home & Desk Décor' |
+                       # 'CSE Academic Models' | 'Keychains & Small Gifts' |
+                       # 'Custom Prints' | 'Event & Fest Merchandise'
+  basePrice: Float!
+  salePrice: Float
+  stockQuantity: Int!
+  printTimeHours: Float
+  weightGrams: Float
+  careInstructions: String
+  ratingAvg: Float @default(value: 0)
+  ratingCount: Int @default(value: 0)
+  isActive: Boolean @default(value: true)
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+# One product can have many images
+type ProductImage @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  product: Product!
+  url: String!
+  position: Int @default(value: 0)
+}
+
+# One product can have many material options, each with its own price delta
+type ProductMaterial @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  product: Product!
+  name: String!         # e.g. 'PLA', 'Resin', 'PETG'
+  priceDelta: Float! @default(value: 0)
+}
+
+# One product can have many size options, each with its own price delta
+type ProductSize @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  product: Product!
+  label: String!         # e.g. 'Small (5cm)'
+  priceDelta: Float! @default(value: 0)
+}
+
+# ==========================================
+# ORDERS, PAYMENTS & FULFILLMENT
+# ==========================================
+
+type Order @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  user: User
+  orderNumber: String!
+  status: String! @default(value: "Placed") # 'Placed' | 'Confirmed' | 'Printing' | 'Shipped' | 'Ready for Pickup' | 'Delivered'
+  totalAmount: Float!
+  deliveryMethod: String! @default(value: "campus_pickup") # 'shipping' | 'campus_pickup'
+  shippingAddress: Address
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+type OrderItem @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  order: Order!
+  product: Product!
+  quantity: Int!
+  selectedMaterial: String
+  selectedSize: String
+  priceAtPurchase: Float!
+}
+
+type Payment @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  order: Order!
+  provider: String! @default(value: "Razorpay")
+  transactionId: String!
+  amount: Float!
+  status: String! @default(value: "paid") # 'pending' | 'paid' | 'failed'
+  createdAt: Timestamp! @default(expr: "request.time")
+}
+
+type Refund @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  order: Order!
+  payment: Payment
+  amount: Float!
+  reason: String!
+  status: String! @default(value: "pending")
+  createdAt: Timestamp! @default(expr: "request.time")
+}
+
+type Shipment @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  order: Order!
+  trackingNumber: String
+  carrier: String
+  shippedAt: Timestamp
+  estimatedDelivery: Timestamp
+  deliveredAt: Timestamp
+}
+
+type OrderStatusHistory @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  order: Order!
+  fromStatus: String
+  toStatus: String!
+  notes: String
+  changedAt: Timestamp! @default(expr: "request.time")
+}
+
+type ReturnRequest @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  order: Order!
+  reason: String!
+  status: String! @default(value: "requested")
+  requestedAt: Timestamp! @default(expr: "request.time")
+}
+
+type Cart @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  user: User
+  sessionId: String
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+type CartItem @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  cart: Cart!
+  product: Product!
+  quantity: Int!
+  selectedMaterial: String
+  selectedSize: String
+}
+
+type WishlistItem @table(key: "id") {
+  id: UUID! @default(expr: "uuidV4()")
+  user: User!
+  product: Product!
+  addedAt: Timestamp! @default(expr: "request.time")
+}

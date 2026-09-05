@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ACET Official Pure White Light Theme Tokens */
+  --bg-body: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-alt: #F9FAFB;
+  
+  --color-primary: #00714C;
+  --color-primary-hover: #005a3c;
+  --color-topbar: #007C3D;
+  --color-footer: #004d33;
+  --color-accent-yellow: #FFDA0F;
+  --color-accent-gold: #D4AF37;
+  
+  --text-main: #111827;
+  --text-muted: #4B5563;
+  --text-subtle: #6B7280;
+  
+  --border-light: #E5E7EB;
+  --border-focus: #00714C;
+
+  /* Official acetcbe.edu.in Fonts */
+  --font-body: 'Public Sans', sans-serif;
+  --font-heading: 'Readex Pro', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  color: #111827;
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings use the exact Readex Pro font from acetcbe.edu.in */
+h1, h2, h3, h4, h5, h6, .font-heading, .font-cinzel, .font-display {
+  font-family: 'Readex Pro', 'Public Sans', sans-serif !important;
+}
+
+/* Custom Scrollbar in Clean ACET Green */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #00714C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #005a3c;
+}
+
+/* Crisp Light Cards */
+.light-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.light-card:hover {
+  border-color: #00714C;
+  box-shadow: 0 10px 25px -5px rgba(0, 113, 76, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Green Gradient Header Text */
+.green-gradient-text {
+  background: linear-gradient(135deg, #00714C 0%, #007C3D 50%, #1ca26e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Shimmer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
