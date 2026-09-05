@@ -70,11 +70,11 @@ export const CartDrawer = () => {
           <div className="bg-[#eef9f3] p-3.5 border-b border-[#aee6cb] text-xs text-center text-[#00714C]">
             {subtotal >= 999 || fulfillment === 'campus' ? (
               <span className="font-bold">
-                🎉 FREE Express Delivery / Campus Pickup Unlocked!
+                 FREE Express Delivery / Campus Pickup Unlocked!
               </span>
             ) : (
               <span>
-                Add <strong className="text-[#00714C]">₹{999 - subtotal}</strong> more for <strong>FREE Delivery</strong> 📦
+                Add <strong className="text-[#00714C]">₹{999 - subtotal}</strong> more for <strong>FREE Delivery</strong> 
               </span>
             )}
             <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden mt-1.5 border border-gray-300">
@@ -154,7 +154,7 @@ export const CartDrawer = () => {
                         : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100'
                     }`}
                   >
-                    🏫 Campus Pickup (FREE)
+                     Campus Pickup (FREE)
                   </button>
                   <button 
                     onClick={() => setFulfillment('courier')}
@@ -164,7 +164,7 @@ export const CartDrawer = () => {
                         : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100'
                     }`}
                   >
-                    📦 Courier (+₹99)
+                     Courier (+₹99)
                   </button>
                 </div>
               </div>

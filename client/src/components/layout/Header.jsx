@@ -361,7 +361,7 @@ export const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               className="w-full bg-[#F4E757] text-[#005539] font-bold text-sm py-3 rounded-xl text-center shadow-xs"
             >
-              📐 Submit Custom CAD File
+               Submit Custom CAD File
             </Link>
             /* Unified Auth handles admin login via Sign In button */
           </div>

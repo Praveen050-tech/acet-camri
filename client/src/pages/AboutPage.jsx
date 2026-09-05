@@ -9,7 +9,7 @@ export const AboutPage = () => {
       {/* Hero Section */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="bg-[#00714C]/10 text-[#00714C] border border-[#00714C]/30 text-xs font-['Readex_Pro'] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
-          🏛️ 3D PRINTING PLATFORM • DEVELOPED BY DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
+          ️ 3D PRINTING PLATFORM • DEVELOPED BY DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
         </span>
         <h1 className="font-['Readex_Pro'] text-3xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
           High-Precision 3D Printing & Physical Manufacturing
@@ -87,7 +87,7 @@ export const AboutPage = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Explore the 3D Print Catalog or Upload Your Model</h2>
         <div className="flex flex-wrap gap-4 justify-center pt-2">
           <Link to="/custom-order" className="bg-[#00714C] hover:bg-[#005539] text-[#FFDA0F] font-bold text-xs px-7 py-3.5 rounded-xl shadow-md transition-all">
-            Launch CAD Estimator ➔
+            Launch CAD Estimator 
           </Link>
           <Link to="/collection/all" className="bg-white border border-gray-300 text-gray-800 font-bold text-xs px-7 py-3.5 rounded-xl hover:bg-gray-50 shadow-2xs">
             Browse Store Catalog

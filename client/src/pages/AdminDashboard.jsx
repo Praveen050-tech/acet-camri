@@ -400,7 +400,7 @@ const handleCreateProduct = async (e) => {
             activeTab === 'products' ? 'bg-[#00714C] text-white shadow-xs' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'
           }`}
         >
-          🛍️ Products Catalog ({products.length})
+          ️ Products Catalog ({products.length})
         </button>
         <button
           onClick={() => setActiveTab('orders')}
@@ -408,7 +408,7 @@ const handleCreateProduct = async (e) => {
             activeTab === 'orders' ? 'bg-[#00714C] text-white shadow-xs' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'
           }`}
         >
-          📦 Orders & Fulfillment ({orders.length})
+           Orders & Fulfillment ({orders.length})
         </button>
         <button
           onClick={() => setActiveTab('cad')}
@@ -416,7 +416,7 @@ const handleCreateProduct = async (e) => {
             activeTab === 'cad' ? 'bg-[#00714C] text-white shadow-xs' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'
           }`}
         >
-          📐 Student CAD Requests ({cadRequests.length})
+           Student CAD Requests ({cadRequests.length})
         </button>
         <button
           onClick={() => setActiveTab('inquiries')}
@@ -424,7 +424,7 @@ const handleCreateProduct = async (e) => {
             activeTab === 'inquiries' ? 'bg-[#00714C] text-white shadow-xs' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'
           }`}
         >
-          ✉️ Contact Inquiries ({inquiries.length})
+          ️ Contact Inquiries ({inquiries.length})
         </button>
         <button
           onClick={() => setActiveTab('pages')}
@@ -432,7 +432,7 @@ const handleCreateProduct = async (e) => {
             activeTab === 'pages' ? 'bg-[#00714C] text-white shadow-xs' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'
           }`}
         >
-          📄 Page Content CMS
+           Page Content CMS
         </button>
       </div>
 
@@ -478,7 +478,7 @@ const handleCreateProduct = async (e) => {
                         {p.stock > 0 ? `${p.stock} in stock` : 'Out of stock'}
                       </span>
                     </td>
-                    <td className="p-3.5 font-semibold text-amber-600">{p.rating}★ ({p.reviewCount})</td>
+                    <td className="p-3.5 font-semibold text-amber-600">{p.rating} ({p.reviewCount})</td>
                     <td className="p-3.5 text-right space-x-2">
                       <button 
                         onClick={() => handleEditClick(p)}
@@ -548,7 +548,7 @@ const handleCreateProduct = async (e) => {
                         <option value="Printing on Machine Bed">3. 3D Printing</option>
                         <option value="Ready for Campus Pickup">4. Ready for Pickup</option>
                         <option value="Dispatched via BlueDart Courier">5. Shipped</option>
-                        <option value="Delivered & Collected">6. Delivered ✓</option>
+                        <option value="Delivered & Collected">6. Delivered </option>
                       </select>
                     </td>
                   </tr>
@@ -584,7 +584,7 @@ const handleCreateProduct = async (e) => {
                       <span className="text-[10px] text-gray-500">{r.rollNo} • {r.contact}</span>
                     </td>
                     <td className="p-4 font-mono text-[11px] text-gray-600">
-                      💾 {r.fileName}
+                       {r.fileName}
                     </td>
                     <td className="p-4 text-gray-600">
                       {r.material} ({r.infillDensity}% infill)
@@ -604,7 +604,7 @@ const handleCreateProduct = async (e) => {
                           Approve & Queue
                         </button>
                       ) : (
-                        <span className="text-[#00714C] text-xs font-bold">✓ Scheduled</span>
+                        <span className="text-[#00714C] text-xs font-bold"> Scheduled</span>
                       )}
                     </td>
                   </tr>

@@ -39,7 +39,7 @@ export const ContactPage = () => {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <span className="bg-[#00714C]/10 text-[#00714C] border border-[#00714C]/30 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
-          📍 DIRECT EVENT COMMUNICATION
+           DIRECT EVENT COMMUNICATION
         </span>
         <h1 className="font-['Cinzel'] text-3xl sm:text-4xl font-extrabold text-gray-900">
           Contact ACET CAMRI
@@ -219,7 +219,7 @@ export const ContactPage = () => {
                 className="w-full bg-[#00714C] hover:bg-[#005a3c] text-white font-bold py-3.5 rounded-xl shadow hover:shadow-md transition-all text-xs flex items-center justify-center gap-2"
               >
                 <Send size={14} />
-                <span>{submitting ? 'Submitting Message...' : 'Send Inquiry to Lab Desk ➔'}</span>
+                <span>{submitting ? 'Submitting Message...' : 'Send Inquiry to Lab Desk '}</span>
               </button>
             </form>
           )}

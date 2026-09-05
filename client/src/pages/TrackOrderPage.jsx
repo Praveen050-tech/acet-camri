@@ -49,7 +49,7 @@ export const TrackOrderPage = () => {
       {/* Header */}
       <div className="text-center space-y-3">
         <span className="bg-[#00714C]/10 text-[#00714C] border border-[#00714C]/30 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
-          🔍 CAMPUS PRINT BED TELEMETRY
+           CAMPUS PRINT BED TELEMETRY
         </span>
         <h1 className="font-['Cinzel'] text-3xl font-extrabold text-gray-900">
           Track Your 3D Print Queue
@@ -134,7 +134,7 @@ export const TrackOrderPage = () => {
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
                     m.done ? 'bg-[#00714C] text-white' : 'bg-gray-200 text-gray-600'
                   }`}>
-                    {m.done ? '✓' : idx + 1}
+                    {m.done ? '' : idx + 1}
                   </div>
                   <div className="flex-1 flex flex-col sm:flex-row justify-between sm:items-center gap-1 text-xs">
                     <span className="font-bold text-gray-900">{m.step}</span>

@@ -85,7 +85,7 @@ export const CollectionPage = () => {
             <option value="popular">Most Popular</option>
             <option value="price-low">Price: Low to High</option>
             <option value="price-high">Price: High to Low</option>
-            <option value="rating">Highest Rated (5★)</option>
+            <option value="rating">Highest Rated (5)</option>
           </select>
         </div>
       </div>
@@ -181,7 +181,7 @@ export const CollectionPage = () => {
             </div>
           ) : (
             <div className="text-center py-24 bg-white border border-gray-200 rounded-3xl p-8 shadow-xs">
-              <span className="text-4xl block mb-2">🔍</span>
+              <span className="text-4xl block mb-2"></span>
               <h3 className="font-['Cinzel'] text-xl font-bold text-gray-900">No 3D Models Found</h3>
               <p className="text-xs text-gray-500 mt-1 max-w-md mx-auto">
                 No products match the selected filters or search query. Try broadening your price range or switching categories.

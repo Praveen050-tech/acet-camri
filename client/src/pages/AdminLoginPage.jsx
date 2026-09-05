@@ -76,7 +76,7 @@ export const AdminLoginPage = () => {
           className="w-full bg-[#00714C] hover:bg-[#005a3c] text-white font-['Readex_Pro'] font-bold py-3.5 rounded-xl shadow-xs hover:shadow-md text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
         >
           <Lock size={14} />
-          <span>{loading ? 'Authenticating...' : 'Sign In to Control Center ➔'}</span>
+          <span>{loading ? 'Authenticating...' : 'Sign In to Control Center '}</span>
         </button>
       </form>
 

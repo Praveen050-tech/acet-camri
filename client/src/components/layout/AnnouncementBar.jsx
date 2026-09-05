@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 const announcements = [
   {
-    icon: '🏫',
+    icon: '',
     text: 'Free Campus Pickup Available at Kinathukadavu 3D Lab Desk',
     highlight: 'Select at checkout',
     link: '/custom-order'
   },
   {
-    icon: '🏆',
+    icon: '',
     text: 'Akshaya Techday & Science Fest Official Merch & Trophies Now Live',
     highlight: 'Explore drops',
     link: '/collection/event-merch'
   },
   {
-    icon: '🔍',
+    icon: '',
     text: 'Live 3D Print Queue: Track your CAD model slicing status',
     highlight: 'Track live',
     link: '/track-order'
@@ -41,7 +41,7 @@ export const AnnouncementBar = () => {
         <span className="tracking-wide text-stone-100">{current.text}</span>
         <span className="text-[#FFDA0F] font-bold">|</span>
         <Link to={current.link} className="text-[#FFDA0F] hover:text-white underline transition-colors font-bold tracking-wide">
-          {current.highlight} ➔
+          {current.highlight} 
         </Link>
       </div>
     </div>

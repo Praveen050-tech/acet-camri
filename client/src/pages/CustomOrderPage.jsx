@@ -70,7 +70,7 @@ export const CustomOrderPage = () => {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
         <span className="bg-[#00714C]/10 text-[#00714C] border border-[#00714C]/30 text-xs font-['Readex_Pro'] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
-          ⚙️ CUSTOM 3D CAD & PROTOTYPING INTAKE
+          ️ CUSTOM 3D CAD & PROTOTYPING INTAKE
         </span>
         <h1 className="font-['Readex_Pro'] text-3xl sm:text-4xl font-extrabold text-gray-900">
           Custom 3D Print Studio & Estimator
@@ -286,7 +286,7 @@ export const CustomOrderPage = () => {
               disabled={submitting}
               className="w-full bg-[#00714C] hover:bg-[#005539] text-[#FFDA0F] font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all text-sm font-['Readex_Pro']"
             >
-              {submitting ? 'Calculating & Submitting...' : 'Submit CAD Request to Lab Queue ➔'}
+              {submitting ? 'Calculating & Submitting...' : 'Submit CAD Request to Lab Queue '}
             </button>
           </form>
 
@@ -337,7 +337,7 @@ export const CustomOrderPage = () => {
             </div>
 
             <div className="p-3.5 rounded-xl bg-[#eef9f3] border border-[#aee6cb] text-[11px] text-[#00714C]">
-              🔒 <strong>Design Confidentiality:</strong> All uploaded project CAD files and 3D designs remain 100% exclusive intellectual property of the submitting creator.
+               <strong>Design Confidentiality:</strong> All uploaded project CAD files and 3D designs remain 100% exclusive intellectual property of the submitting creator.
             </div>
           </div>
 

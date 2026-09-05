@@ -130,7 +130,7 @@ export const CartPage = () => {
                     : 'border-gray-200 text-gray-600 hover:bg-gray-50'
                 }`}
               >
-                🏫 Campus Pickup (FREE)
+                 Campus Pickup (FREE)
               </button>
               <button 
                 onClick={() => setFulfillment('courier')}
@@ -140,7 +140,7 @@ export const CartPage = () => {
                     : 'border-gray-200 text-gray-600 hover:bg-gray-50'
                 }`}
               >
-                📦 Courier (+₹99)
+                 Courier (+₹99)
               </button>
             </div>
           </div>

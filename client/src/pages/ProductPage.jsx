@@ -303,7 +303,7 @@ export const ProductPage = () => {
             className="w-full bg-[#00714C] hover:bg-[#005a3c] text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-sm flex items-center justify-center gap-2"
           >
             <span>Add to Cart & Select Campus Pickup</span>
-            <span>➔</span>
+            <span></span>
           </button>
 
           {/* Trust Points */}
@@ -409,7 +409,7 @@ export const ProductPage = () => {
                 <div key={idx} className="p-4 rounded-2xl bg-white border border-gray-200 space-y-2 shadow-xs">
                   <div className="flex justify-between items-center text-xs">
                     <span className="font-bold text-gray-900">{rev.author}</span>
-                    <span className="text-amber-400">★★★★★</span>
+                    <span className="text-amber-400"></span>
                   </div>
                   <p className="text-xs text-gray-600 italic">“{rev.comment}”</p>
                 </div>

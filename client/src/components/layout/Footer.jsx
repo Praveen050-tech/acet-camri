@@ -249,7 +249,7 @@ export const Footer = () => {
                   Join
                 </button>
               </div>
-              {subscribed && <span className="text-xs text-[#FFDA0F] block mt-1 font-semibold">✓ Subscribed to lab drops!</span>}
+              {subscribed && <span className="text-xs text-[#FFDA0F] block mt-1 font-semibold"> Subscribed to lab drops!</span>}
             </form>
           </div>
 
