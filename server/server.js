@@ -34,9 +34,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Initialize Supabase tables & seed data
-seedDatabase().catch((err) => {
-  console.warn('Initial seeding notice:', err.message);
-});
+// seedDatabase().catch((err) => {
+  // console.warn('Initial seeding notice:', err.message);
+// });
 
 // Production & Subdomain CORS policy
 const allowedOrigins = [
@@ -45,6 +45,7 @@ const allowedOrigins = [
   'http://127.0.0.1:3000',
   'http://127.0.0.1:5000',
   'https://store.acetcbe.edu.in',
+  'https://acet-camri.vercel.app',
   'https://3d.acetcbe.edu.in',
   'https://acetcbe.edu.in'
 ];
