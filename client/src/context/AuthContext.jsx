@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { supabase } from '../config/supabase';
+import { supabase } from '../config/supabase.js';
 import { authAPI } from '../api/client';
 
 const AuthContext = createContext();
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
         }
       });
       if (error) throw error;
-      return { success: true2 };
+      return { success: true };
     } catch (err) {
       return { success: false, message: err.message || 'Google Login failed' };
     } finally {
