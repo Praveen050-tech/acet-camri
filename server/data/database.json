@@ -6,7 +6,7 @@
       "title": "ACET Official Crest & Institutional Seal Monolith",
       "slug": "acet-crest-monolith",
       "sku": "ACET-CRST-001",
-      "category": "CSE Academic Models",
+      "category": "engineering-models",
       "categoryLabel": "College Merch",
       "subcategory": "Institutional Identity",
       "salePrice": 899,
@@ -64,8 +64,8 @@
         }
       ],
       "campusPickupAvailable": true,
-      "createdAt": "2026-09-05T06:35:58.868Z",
-      "updatedAt": "2026-09-05T06:35:58.868Z",
+      "createdAt": "2026-09-06T08:53:46.463Z",
+      "updatedAt": "2026-09-06T08:53:46.463Z",
       "stockQuantity": 45,
       "isActive": true
     },
@@ -75,7 +75,7 @@
       "title": "4:1 Planetary Reduction Gearbox (Print-in-Place)",
       "slug": "planetary-reduction-gearbox",
       "sku": "ACET-ENG-002",
-      "category": "CSE Academic Models",
+      "category": "engineering-models",
       "categoryLabel": "Engineering Models",
       "subcategory": "Kinematics & Machine Design",
       "salePrice": 1149,
@@ -128,8 +128,8 @@
         }
       ],
       "campusPickupAvailable": true,
-      "createdAt": "2026-09-05T06:36:00.416Z",
-      "updatedAt": "2026-09-05T06:36:00.416Z",
+      "createdAt": "2026-09-06T08:53:46.956Z",
+      "updatedAt": "2026-09-06T08:53:46.956Z",
       "stockQuantity": 25,
       "isActive": true
     },
@@ -192,8 +192,8 @@
         }
       ],
       "campusPickupAvailable": true,
-      "createdAt": "2026-09-05T06:36:00.641Z",
-      "updatedAt": "2026-09-05T06:36:00.641Z",
+      "createdAt": "2026-09-06T08:53:47.167Z",
+      "updatedAt": "2026-09-06T08:53:47.167Z",
       "stockQuantity": 12,
       "isActive": true
     },
@@ -256,8 +256,8 @@
         }
       ],
       "campusPickupAvailable": true,
-      "createdAt": "2026-09-05T06:36:01.112Z",
-      "updatedAt": "2026-09-05T06:36:01.112Z",
+      "createdAt": "2026-09-06T08:53:47.362Z",
+      "updatedAt": "2026-09-06T08:53:47.362Z",
       "stockQuantity": 18,
       "isActive": true
     },
@@ -315,8 +315,8 @@
         }
       ],
       "campusPickupAvailable": true,
-      "createdAt": "2026-09-05T06:36:01.297Z",
-      "updatedAt": "2026-09-05T06:36:01.297Z",
+      "createdAt": "2026-09-06T08:53:47.555Z",
+      "updatedAt": "2026-09-06T08:53:47.555Z",
       "stockQuantity": 40,
       "isActive": true
     },
@@ -374,8 +374,8 @@
         }
       ],
       "campusPickupAvailable": true,
-      "createdAt": "2026-09-05T06:36:01.483Z",
-      "updatedAt": "2026-09-05T06:36:01.483Z",
+      "createdAt": "2026-09-06T08:53:47.746Z",
+      "updatedAt": "2026-09-06T08:53:47.746Z",
       "stockQuantity": 50,
       "isActive": true
     },
@@ -416,8 +416,968 @@
       "ratingAvg": 5,
       "ratingCount": 0,
       "isActive": true,
-      "createdAt": "2026-09-05T06:44:59.392Z",
-      "updatedAt": "2026-09-05T06:44:59.392Z"
+      "createdAt": "2026-09-06T08:53:47.942Z",
+      "updatedAt": "2026-09-06T08:53:47.942Z"
+    },
+    {
+      "id": "articulated-flexi-dragon",
+      "name": "Articulated Flexi-Dragon",
+      "slug": "articulated-flexi-dragon",
+      "description": "A fully articulated, print-in-place dragon with movable joints. Perfect for fidgeting or as a desk companion.",
+      "category": "figurines",
+      "basePrice": 500,
+      "salePrice": 450,
+      "stockQuantity": 20,
+      "stock": 20,
+      "images": [
+        {
+          "id": "img-articulated-flexi-dragon-0",
+          "url": "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-articulated-flexi-dragon-0",
+          "name": "PLA (Standard)",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-articulated-flexi-dragon-1",
+          "name": "Silk PLA",
+          "priceDelta": 100
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-articulated-flexi-dragon-0",
+          "label": "Standard (15cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-articulated-flexi-dragon-1",
+          "label": "Large (25cm)",
+          "priceDelta": 300
+        }
+      ],
+      "printTimeHours": 4,
+      "weightGrams": 100,
+      "careInstructions": "Keep away from excessive heat and direct sunlight to prevent warping.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:48.136Z",
+      "updatedAt": "2026-09-06T08:53:48.136Z"
+    },
+    {
+      "id": "mythical-warrior-bust",
+      "name": "Mythical Warrior Bust",
+      "slug": "mythical-warrior-bust",
+      "description": "A highly detailed fantasy warrior bust suitable for painting or display. Captures intricate armor and facial expressions.",
+      "category": "figurines",
+      "basePrice": 850,
+      "salePrice": null,
+      "stockQuantity": 10,
+      "stock": 10,
+      "images": [
+        {
+          "id": "img-mythical-warrior-bust-0",
+          "url": "https://images.unsplash.com/photo-1608670576356-74fc24a7ba5d?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-mythical-warrior-bust-0",
+          "name": "Resin (High Detail)",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-mythical-warrior-bust-1",
+          "name": "PLA+",
+          "priceDelta": -100
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-mythical-warrior-bust-0",
+          "label": "Standard (10cm tall)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-mythical-warrior-bust-1",
+          "label": "Oversized (20cm tall)",
+          "priceDelta": 600
+        }
+      ],
+      "printTimeHours": 8,
+      "weightGrams": 200,
+      "careInstructions": "Handle with care. Can be primed and painted with acrylics.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:48.325Z",
+      "updatedAt": "2026-09-06T08:53:48.325Z"
+    },
+    {
+      "id": "geometric-spiral-planter",
+      "name": "Geometric Spiral Planter",
+      "slug": "geometric-spiral-planter",
+      "description": "A modern, low-poly spiral vase perfect for small indoor plants or succulents. Printed with a watertight setting.",
+      "category": "home-decor",
+      "basePrice": 350,
+      "salePrice": null,
+      "stockQuantity": 30,
+      "stock": 30,
+      "images": [
+        {
+          "id": "img-geometric-spiral-planter-0",
+          "url": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-geometric-spiral-planter-0",
+          "name": "PETG (Water Resistant)",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-geometric-spiral-planter-1",
+          "name": "Wood-fill PLA",
+          "priceDelta": 150
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-geometric-spiral-planter-0",
+          "label": "Small (10cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-geometric-spiral-planter-1",
+          "label": "Large (15cm)",
+          "priceDelta": 200
+        }
+      ],
+      "printTimeHours": 5,
+      "weightGrams": 150,
+      "careInstructions": "Indoor use only. Clean with a damp cloth.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:48.517Z",
+      "updatedAt": "2026-09-06T08:53:48.517Z"
+    },
+    {
+      "id": "modular-desk-organizer",
+      "name": "Modular Desk Organizer",
+      "slug": "modular-desk-organizer",
+      "description": "A customizable desk organizer set. Includes compartments for pens, a smartphone stand, and a tray for paperclips.",
+      "category": "home-decor",
+      "basePrice": 600,
+      "salePrice": 500,
+      "stockQuantity": 15,
+      "stock": 15,
+      "images": [
+        {
+          "id": "img-modular-desk-organizer-0",
+          "url": "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-modular-desk-organizer-0",
+          "name": "PLA",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-modular-desk-organizer-1",
+          "name": "ABS",
+          "priceDelta": 100
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-modular-desk-organizer-0",
+          "label": "Standard Set",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-modular-desk-organizer-1",
+          "label": "Extended Set (Extra Trays)",
+          "priceDelta": 300
+        }
+      ],
+      "printTimeHours": 6,
+      "weightGrams": 250,
+      "careInstructions": "Wipe with a soft cloth. Do not use harsh chemicals.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:48.725Z",
+      "updatedAt": "2026-09-06T08:53:48.725Z"
+    },
+    {
+      "id": "logic-gate-demo-model",
+      "name": "Logic Gate Demonstration Model",
+      "slug": "logic-gate-demo-model",
+      "description": "A physical representation of basic logic gates (AND, OR, NOT) with snap-fit connectors for educational demonstrations in computer architecture classes.",
+      "category": "engineering-models",
+      "basePrice": 400,
+      "salePrice": null,
+      "stockQuantity": 50,
+      "stock": 50,
+      "images": [
+        {
+          "id": "img-logic-gate-demo-model-0",
+          "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-logic-gate-demo-model-0",
+          "name": "PLA",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-logic-gate-demo-model-1",
+          "name": "PETG",
+          "priceDelta": 50
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-logic-gate-demo-model-0",
+          "label": "Standard",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-logic-gate-demo-model-1",
+          "label": "Classroom Size",
+          "priceDelta": 150
+        }
+      ],
+      "printTimeHours": 3,
+      "weightGrams": 80,
+      "careInstructions": "Store in a cool, dry place. Snap-fit joints may loosen over time.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:48.922Z",
+      "updatedAt": "2026-09-06T08:53:48.922Z"
+    },
+    {
+      "id": "scaled-robotic-arm-assembly",
+      "name": "Scaled Robotic Arm Assembly",
+      "slug": "scaled-robotic-arm-assembly",
+      "description": "A functional, scaled-down mechanical robotic arm assembly. Ideal for CSE robotics labs and kinematic demonstrations.",
+      "category": "engineering-models",
+      "basePrice": 1200,
+      "salePrice": null,
+      "stockQuantity": 5,
+      "stock": 5,
+      "images": [
+        {
+          "id": "img-scaled-robotic-arm-assembly-0",
+          "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-scaled-robotic-arm-assembly-0",
+          "name": "ABS (Durable)",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-scaled-robotic-arm-assembly-1",
+          "name": "Nylon",
+          "priceDelta": 400
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-scaled-robotic-arm-assembly-0",
+          "label": "1:10 Scale",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-scaled-robotic-arm-assembly-1",
+          "label": "1:5 Scale",
+          "priceDelta": 800
+        }
+      ],
+      "printTimeHours": 15,
+      "weightGrams": 500,
+      "careInstructions": "Contains small moving parts. Assemble carefully.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:49.110Z",
+      "updatedAt": "2026-09-06T08:53:49.110Z"
+    },
+    {
+      "id": "custom-nameplate-keychain",
+      "name": "Custom Nameplate Keychain",
+      "slug": "custom-nameplate-keychain",
+      "description": "A personalized 3D-printed keychain with your name or custom text. Perfect as a quick gift or backpack tag.",
+      "category": "college-merch",
+      "basePrice": 150,
+      "salePrice": null,
+      "stockQuantity": 100,
+      "stock": 100,
+      "images": [
+        {
+          "id": "img-custom-nameplate-keychain-0",
+          "url": "https://images.unsplash.com/photo-1629851606990-2c70d4949503?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-custom-nameplate-keychain-0",
+          "name": "PLA",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-custom-nameplate-keychain-1",
+          "name": "TPU (Flexible)",
+          "priceDelta": 50
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-custom-nameplate-keychain-0",
+          "label": "Standard (5cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-custom-nameplate-keychain-1",
+          "label": "Long (8cm)",
+          "priceDelta": 20
+        }
+      ],
+      "printTimeHours": 1,
+      "weightGrams": 15,
+      "careInstructions": "Attach to keys securely. Avoid excessive bending.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:49.297Z",
+      "updatedAt": "2026-09-06T08:53:49.297Z"
+    },
+    {
+      "id": "emoji-mascot-keychain",
+      "name": "Emoji Mascot Keychain",
+      "slug": "emoji-mascot-keychain",
+      "description": "A small, fun mascot figurine keychain. Dual-color print featuring a classic emoji design.",
+      "category": "college-merch",
+      "basePrice": 200,
+      "salePrice": 180,
+      "stockQuantity": 75,
+      "stock": 75,
+      "images": [
+        {
+          "id": "img-emoji-mascot-keychain-0",
+          "url": "https://images.unsplash.com/photo-1616628188506-4bf98a58a7ab?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-emoji-mascot-keychain-0",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-emoji-mascot-keychain-0",
+          "label": "Standard",
+          "priceDelta": 0
+        }
+      ],
+      "printTimeHours": 1,
+      "weightGrams": 20,
+      "careInstructions": "Wipe clean if necessary.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:49.482Z",
+      "updatedAt": "2026-09-06T08:53:49.482Z"
+    },
+    {
+      "id": "photo-to-3d-lithophane-bust",
+      "name": "Photo-to-3D Lithophane Bust",
+      "slug": "photo-to-3d-lithophane-bust",
+      "description": "An example of our custom 3D modeling service. We convert a 2D photograph into a stunning 3D lithophane bust that illuminates when placed in front of light.",
+      "category": "alumni-gifting",
+      "basePrice": 900,
+      "salePrice": null,
+      "stockQuantity": 999,
+      "stock": 999,
+      "images": [
+        {
+          "id": "img-photo-to-3d-lithophane-bust-0",
+          "url": "https://images.unsplash.com/photo-1618365908648-e71bd5716cba?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-photo-to-3d-lithophane-bust-0",
+          "name": "White PLA (High Opacity)",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-photo-to-3d-lithophane-bust-1",
+          "name": "White Resin",
+          "priceDelta": 300
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-photo-to-3d-lithophane-bust-0",
+          "label": "Medium (12cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-photo-to-3d-lithophane-bust-1",
+          "label": "Large (18cm)",
+          "priceDelta": 400
+        }
+      ],
+      "printTimeHours": 10,
+      "weightGrams": 120,
+      "careInstructions": "Keep out of direct sunlight. Place near a light source for best effect.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:49.678Z",
+      "updatedAt": "2026-09-06T08:53:49.678Z"
+    },
+    {
+      "id": "custom-logo-plaque",
+      "name": "Custom Logo / Plaque Service",
+      "slug": "custom-logo-plaque",
+      "description": "Example of our custom logo plaque printing. Provide your 2D logo, and we will extrude it into a professional, dual-color 3D sign.",
+      "category": "alumni-gifting",
+      "basePrice": 750,
+      "salePrice": null,
+      "stockQuantity": 999,
+      "stock": 999,
+      "images": [
+        {
+          "id": "img-custom-logo-plaque-0",
+          "url": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-custom-logo-plaque-0",
+          "name": "PLA",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-custom-logo-plaque-1",
+          "name": "PETG",
+          "priceDelta": 100
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-custom-logo-plaque-0",
+          "label": "Small (15cm wide)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-custom-logo-plaque-1",
+          "label": "Medium (25cm wide)",
+          "priceDelta": 300
+        }
+      ],
+      "printTimeHours": 7,
+      "weightGrams": 300,
+      "careInstructions": "Can be wall-mounted using double-sided tape.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:49.875Z",
+      "updatedAt": "2026-09-06T08:53:49.875Z"
+    },
+    {
+      "id": "hackathon-champion-trophy",
+      "name": "Hackathon Champion Trophy",
+      "slug": "hackathon-champion-trophy",
+      "description": "A themed trophy print designed for CSE department hackathons and coding fests. Features a geometric brain design.",
+      "category": "event-merch",
+      "basePrice": 600,
+      "salePrice": null,
+      "stockQuantity": 20,
+      "stock": 20,
+      "images": [
+        {
+          "id": "img-hackathon-champion-trophy-0",
+          "url": "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-hackathon-champion-trophy-0",
+          "name": "Silk Gold PLA",
+          "priceDelta": 0
+        },
+        {
+          "id": "mat-hackathon-champion-trophy-1",
+          "name": "Silk Silver PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-hackathon-champion-trophy-0",
+          "label": "First Place Size",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-hackathon-champion-trophy-1",
+          "label": "Runner Up Size",
+          "priceDelta": -100
+        }
+      ],
+      "printTimeHours": 8,
+      "weightGrams": 250,
+      "careInstructions": "Dust regularly. Fragile top sections.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:50.059Z",
+      "updatedAt": "2026-09-06T08:53:50.059Z"
+    },
+    {
+      "id": "tech-fest-mascot-figurine",
+      "name": "Tech Fest Mascot Figurine",
+      "slug": "tech-fest-mascot-figurine",
+      "description": "The official mascot of the annual department tech fest. A limited edition print available exclusively during event season.",
+      "category": "event-merch",
+      "basePrice": 300,
+      "salePrice": null,
+      "stockQuantity": 50,
+      "stock": 50,
+      "images": [
+        {
+          "id": "img-tech-fest-mascot-figurine-0",
+          "url": "https://images.unsplash.com/photo-1582298538104-e2eb7035ce4c?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-tech-fest-mascot-figurine-0",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-tech-fest-mascot-figurine-0",
+          "label": "Standard",
+          "priceDelta": 0
+        }
+      ],
+      "printTimeHours": 3,
+      "weightGrams": 80,
+      "careInstructions": "Generic display item.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:50.690Z",
+      "updatedAt": "2026-09-06T08:53:50.690Z"
+    },
+    {
+      "id": "lord-ganesh-idol",
+      "name": "Lord Ganesh Idol",
+      "slug": "lord-ganesh-idol",
+      "description": "A traditional seated Ganesh figurine. Highly detailed, making it suitable for home or office altars and as a thoughtful gift. Resin printing is recommended to capture the finer details.",
+      "category": "figurines",
+      "basePrice": 400,
+      "salePrice": null,
+      "stockQuantity": 25,
+      "stock": 25,
+      "images": [
+        {
+          "id": "img-lord-ganesh-idol-0",
+          "url": "https://images.unsplash.com/photo-1590022419747-d1d6dd8b939e?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-lord-ganesh-idol-0",
+          "name": "White Resin (Recommended)",
+          "priceDelta": 100
+        },
+        {
+          "id": "mat-lord-ganesh-idol-1",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-lord-ganesh-idol-0",
+          "label": "Small (10cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-lord-ganesh-idol-1",
+          "label": "Medium (18cm)",
+          "priceDelta": 300
+        }
+      ],
+      "printTimeHours": 6,
+      "weightGrams": 150,
+      "careInstructions": "Handle with care. Dust with a soft brush.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:50.876Z",
+      "updatedAt": "2026-09-06T08:53:50.876Z"
+    },
+    {
+      "id": "lord-shiva-idol",
+      "name": "Lord Shiva Idol",
+      "slug": "lord-shiva-idol",
+      "description": "A finely detailed Shiva figurine depicted in a meditative pose. Ideal for display and gifting. For the best reproduction of intricate ornaments, select the Resin option.",
+      "category": "figurines",
+      "basePrice": 450,
+      "salePrice": null,
+      "stockQuantity": 15,
+      "stock": 15,
+      "images": [
+        {
+          "id": "img-lord-shiva-idol-0",
+          "url": "https://images.unsplash.com/photo-1591147576264-b6a8f10b78e2?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-lord-shiva-idol-0",
+          "name": "White Resin (Recommended)",
+          "priceDelta": 100
+        },
+        {
+          "id": "mat-lord-shiva-idol-1",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-lord-shiva-idol-0",
+          "label": "Small (10cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-lord-shiva-idol-1",
+          "label": "Medium (18cm)",
+          "priceDelta": 350
+        }
+      ],
+      "printTimeHours": 7,
+      "weightGrams": 160,
+      "careInstructions": "Fragile details; avoid dropping.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:51.061Z",
+      "updatedAt": "2026-09-06T08:53:51.061Z"
+    },
+    {
+      "id": "lord-krishna-idol",
+      "name": "Lord Krishna Idol",
+      "slug": "lord-krishna-idol",
+      "description": "A beautifully sculpted Krishna figurine holding a flute. Perfect for festive gifting or home décor. We recommend the high-detail resin material for the best finish.",
+      "category": "figurines",
+      "basePrice": 400,
+      "salePrice": null,
+      "stockQuantity": 20,
+      "stock": 20,
+      "images": [
+        {
+          "id": "img-lord-krishna-idol-0",
+          "url": "https://images.unsplash.com/photo-1628186105021-396426dbecad?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-lord-krishna-idol-0",
+          "name": "White Resin (Recommended)",
+          "priceDelta": 100
+        },
+        {
+          "id": "mat-lord-krishna-idol-1",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-lord-krishna-idol-0",
+          "label": "Small (10cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-lord-krishna-idol-1",
+          "label": "Medium (18cm)",
+          "priceDelta": 300
+        }
+      ],
+      "printTimeHours": 6,
+      "weightGrams": 140,
+      "careInstructions": "Keep away from direct heat.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:51.250Z",
+      "updatedAt": "2026-09-06T08:53:51.250Z"
+    },
+    {
+      "id": "goddess-lakshmi-idol",
+      "name": "Goddess Lakshmi Idol",
+      "slug": "goddess-lakshmi-idol",
+      "description": "A traditional Lakshmi figurine. A common festive and gifting item, printed with care. Choose the Resin material to ensure all fine jewelry details are perfectly resolved.",
+      "category": "figurines",
+      "basePrice": 400,
+      "salePrice": null,
+      "stockQuantity": 30,
+      "stock": 30,
+      "images": [
+        {
+          "id": "img-goddess-lakshmi-idol-0",
+          "url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-goddess-lakshmi-idol-0",
+          "name": "White Resin (Recommended)",
+          "priceDelta": 100
+        },
+        {
+          "id": "mat-goddess-lakshmi-idol-1",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-goddess-lakshmi-idol-0",
+          "label": "Small (10cm)",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-goddess-lakshmi-idol-1",
+          "label": "Medium (18cm)",
+          "priceDelta": 300
+        }
+      ],
+      "printTimeHours": 6,
+      "weightGrams": 150,
+      "careInstructions": "Dust with a soft brush.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:51.475Z",
+      "updatedAt": "2026-09-06T08:53:51.475Z"
+    },
+    {
+      "id": "four-bar-linkage-demo",
+      "name": "Four-Bar Linkage Mechanism Demo Board",
+      "slug": "four-bar-linkage-demo",
+      "description": "A working demonstration of a basic four-bar linkage mechanism. Hand-crank operated. Excellent teaching aid for engineering students exploring kinematics.",
+      "category": "engineering-models",
+      "basePrice": 500,
+      "salePrice": null,
+      "stockQuantity": 15,
+      "stock": 15,
+      "images": [
+        {
+          "id": "img-four-bar-linkage-demo-0",
+          "url": "https://images.unsplash.com/photo-1581092334245-d4193568c8b6?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-four-bar-linkage-demo-0",
+          "name": "PETG (Durable)",
+          "priceDelta": 100
+        },
+        {
+          "id": "mat-four-bar-linkage-demo-1",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-four-bar-linkage-demo-0",
+          "label": "Standard Desktop Size",
+          "priceDelta": 0
+        }
+      ],
+      "printTimeHours": 8,
+      "weightGrams": 200,
+      "careInstructions": "Do not force the crank. Lubricate joints lightly if squeaking occurs.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:51.708Z",
+      "updatedAt": "2026-09-06T08:53:51.708Z"
+    },
+    {
+      "id": "gearbox-demo-model",
+      "name": "Gearbox / Gear Train Demonstration Model",
+      "slug": "gearbox-demo-model",
+      "description": "A simple gear-train assembly demonstrating torque and speed relationships. Features multiple interchangeable gear ratios for educational exploration.",
+      "category": "engineering-models",
+      "basePrice": 850,
+      "salePrice": null,
+      "stockQuantity": 10,
+      "stock": 10,
+      "images": [
+        {
+          "id": "img-gearbox-demo-model-0",
+          "url": "https://images.unsplash.com/photo-1517420879524-86d64ac2f339?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-gearbox-demo-model-0",
+          "name": "PETG (Durable)",
+          "priceDelta": 150
+        },
+        {
+          "id": "mat-gearbox-demo-model-1",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-gearbox-demo-model-0",
+          "label": "Standard",
+          "priceDelta": 0
+        }
+      ],
+      "printTimeHours": 12,
+      "weightGrams": 350,
+      "careInstructions": "Keep fingers clear of meshing gears during operation.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:51.897Z",
+      "updatedAt": "2026-09-06T08:53:51.897Z"
+    },
+    {
+      "id": "cam-follower-demo",
+      "name": "Cam-and-Follower Mechanism Model",
+      "slug": "cam-follower-demo",
+      "description": "Demonstrates the conversion of rotary motion into linear motion via a cam profile. Perfect for hobbyists and mechanical engineering demonstrations.",
+      "category": "engineering-models",
+      "basePrice": 400,
+      "salePrice": null,
+      "stockQuantity": 20,
+      "stock": 20,
+      "images": [
+        {
+          "id": "img-cam-follower-demo-0",
+          "url": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-cam-follower-demo-0",
+          "name": "PETG (Durable)",
+          "priceDelta": 50
+        },
+        {
+          "id": "mat-cam-follower-demo-1",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-cam-follower-demo-0",
+          "label": "Standard",
+          "priceDelta": 0
+        }
+      ],
+      "printTimeHours": 5,
+      "weightGrams": 120,
+      "careInstructions": "Ensure the follower track remains clear of debris.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:52.097Z",
+      "updatedAt": "2026-09-06T08:53:52.097Z"
+    },
+    {
+      "id": "mini-piston-assembly",
+      "name": "Miniature Engine Piston Assembly",
+      "slug": "mini-piston-assembly",
+      "description": "A hand-crank-operated piston and cylinder demonstration model. Shows the internal reciprocating motion of a basic combustion engine block.",
+      "category": "engineering-models",
+      "basePrice": 950,
+      "salePrice": null,
+      "stockQuantity": 5,
+      "stock": 5,
+      "images": [
+        {
+          "id": "img-mini-piston-assembly-0",
+          "url": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=800",
+          "position": 0
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat-mini-piston-assembly-0",
+          "name": "PETG (Durable)",
+          "priceDelta": 150
+        },
+        {
+          "id": "mat-mini-piston-assembly-1",
+          "name": "PLA",
+          "priceDelta": 0
+        }
+      ],
+      "sizes": [
+        {
+          "id": "sz-mini-piston-assembly-0",
+          "label": "1:4 Scale",
+          "priceDelta": 0
+        }
+      ],
+      "printTimeHours": 14,
+      "weightGrams": 400,
+      "careInstructions": "Tolerances are tight; handle gently to avoid binding.",
+      "ratingAvg": 5,
+      "ratingCount": 0,
+      "isActive": true,
+      "createdAt": "2026-09-06T08:53:52.280Z",
+      "updatedAt": "2026-09-06T08:53:52.280Z"
     }
   ],
   "orders": [

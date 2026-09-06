@@ -6,6 +6,7 @@ import { Star, Plus, Box, Clock, Scale } from 'lucide-react';
 export const ProductCard = ({ product, onQuick3D }) => {
   const { addToCart } = useCart();
 
+  const isVideo = (url) => typeof url === 'string' && ['mp4', 'webm', 'mov'].includes(url.split('?')[0].split('.').pop().toLowerCase());
   return (
     <div className="group bg-white hover:bg-white border border-gray-200 hover:border-[#00714C] rounded-2xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col text-gray-900 font-['Public_Sans']">
       

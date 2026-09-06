@@ -15,6 +15,7 @@ import { CollectionPage } from './pages/CollectionPage';
 import { ProductPage } from './pages/ProductPage';
 import { CustomOrderPage } from './pages/CustomOrderPage';
 import { CartPage } from './pages/CartPage';
+import { PaymentFormPage } from './pages/PaymentFormPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 import { TrackOrderPage } from './pages/TrackOrderPage';
 import { AboutPage } from './pages/AboutPage';
@@ -68,7 +69,8 @@ export function App() {
                     <Route path="/product/:id" element={<ProductPage />} />
                     <Route path="/custom-order" element={<CustomOrderPage />} />
                     <Route path="/cart" element={<CartPage />} />
-                    <Route path="/checkout" element={<CheckoutPage />} />
+                    <Route path='/pay/:orderId' element={<PaymentFormPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
                     <Route path="/track-order" element={<TrackOrderPage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contact" element={<ContactPage />} />

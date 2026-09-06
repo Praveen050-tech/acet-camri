@@ -95,7 +95,7 @@ export const TrackOrderPage = () => {
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#00714C] animate-pulse" />
               <span className="text-xs bg-[#eef9f3] text-[#00714C] font-bold px-3.5 py-1 rounded-full border border-[#aee6cb]">
-                {orderData.status || '3D Printing on Bed 02'}
+                {orderData.paymentStatus === 'pending_verification' ? 'Payment Under Verification' : orderData.paymentStatus === 'failed' ? 'Payment Failed' : (orderData.status || 'Placed')}
               </span>
             </div>
           </div>

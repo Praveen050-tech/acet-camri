@@ -123,20 +123,30 @@ export const ProductPage = () => {
           {(() => {
             const allMedia = [];
             
-            // Collect images
+            // Collect media
             const imgList = Array.isArray(product.images) ? product.images : [];
-            const imageUrls = imgList.map(img => typeof img === 'string' ? img : img.url).filter(Boolean);
+            const imageUrls = imgList.map(img => typeof img === "string" ? img : img.url).filter(Boolean);
             if (imageUrls.length === 0 && product.image) imageUrls.push(product.image);
             if (imageUrls.length === 0 && product.imageHover) imageUrls.push(product.imageHover);
-            imageUrls.forEach(url => allMedia.push({ type: 'image', url }));
             
-            // Collect videos
+            imageUrls.forEach(url => {
+              if (!url || typeof url !== 'string') return;
+              const ext = url.split("?")[0].split(".").pop().toLowerCase();
+              let type = "image";
+              if (["mp4", "webm", "mov"].includes(ext)) type = "video";
+              else if (["glb", "gltf"].includes(ext)) type = "model3d";
+              allMedia.push({ type, url });
+            });
+            
+            // Collect legacy videos
             const vidList = Array.isArray(product.videos) ? product.videos : [];
-            vidList.forEach(url => allMedia.push({ type: 'video', url }));
+            vidList.forEach(url => {
+              if(url && !allMedia.some(m => m.url === url)) allMedia.push({ type: "video", url });
+            });
             
-            // Collect 3D model
-            if (product.model3d) {
-              allMedia.push({ type: 'model3d', url: product.model3d });
+            // Collect legacy 3D model
+            if (product.model3d && !allMedia.some(m => m.url === product.model3d)) {
+              allMedia.push({ type: "model3d", url: product.model3d });
             }
 
             if (allMedia.length === 0) {

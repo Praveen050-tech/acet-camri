@@ -83,7 +83,11 @@ export const pageContentAPI = {
 };
 
 export const paymentAPI = {
-  createOrder: (data) => api.post('/payment/create-order', data),
-  verifyPayment: (data) => api.post('/payment/verify', data)
+  getSettings: () => api.get('/payment/settings'),
+  updateSettings: (data) => api.put('/payment/settings', data),
+  submitPayment: (orderId, data) => api.post(/payment//submit, data),
+  getPending: () => api.get('/payment/pending'),
+  verify: (id) => api.patch(/payment//verify),
+  reject: (id, reason) => api.patch(/payment//reject, { reason })
 };
 

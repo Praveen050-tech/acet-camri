@@ -16,7 +16,7 @@ export const CheckoutPage = () => {
     rollNo: '',
     department: '',
     address: '',
-    paymentMethod: 'Razorpay / UPI'
+    paymentMethod: 'Bank/UPI Transfer'
   });
 
   const [placing, setPlacing] = useState(false);
@@ -55,121 +55,45 @@ export const CheckoutPage = () => {
     );
   }
 
-  const handlePayment = async () => {
-    try {
-      setPlacing(true);
-      // 1. Create order on backend
-      const res = await paymentAPI.createOrder({ amount: total });
-      if (!res.data.success) throw new Error('Failed to initialize payment');
-      
-      const order = res.data.data;
-      
-      // 2. Open Razorpay Checkout
-      const options = {
-        key: 'rzp_test_dummy_key_123', // Dummy key for frontend
-        amount: order.amount,
-        currency: order.currency,
-        name: 'ACET 3D Printing Club',
-        description: 'Order Payment',
-        order_id: order.id,
-        handler: async function (response) {
-          try {
-            // 3. Verify payment signature
-            const verifyRes = await paymentAPI.verifyPayment({
-              razorpay_order_id: response.razorpay_order_id,
-              razorpay_payment_id: response.razorpay_payment_id,
-              razorpay_signature: response.razorpay_signature
-            });
-            
-            if (verifyRes.data.success) {
-              // 4. Create final order
-              const orderPayload = {
-                customerName: formData.customerName,
-                contact: formData.contact,
-                rollNo: formData.rollNo,
-                department: formData.department,
-                items,
-                subtotal,
-                discount,
-                shipping,
-                total,
-                fulfillment: fulfillment === 'campus' ? 'Campus Pickup (Kinathukadavu 3D Lab)' : 'BlueDart Express Courier',
-                address: formData.address,
-                paymentMethod: 'Razorpay',
-                razorpayPaymentId: response.razorpay_payment_id
-              };
-
-              const finalRes = await orderAPI.create(orderPayload);
-              if (finalRes.data.success) {
-                setConfirmedOrder(finalRes.data.data);
-                clearCart();
-              }
-            } else {
-              alert('Payment signature verification failed.');
-            }
-          } catch (err) {
-            console.error('Final order creation error:', err);
-            alert('Payment was successful but order creation failed. Please contact support.');
-          }
-        },
-        prefill: {
-          name: formData.customerName,
-          email: buyer?.email,
-          contact: formData.contact
-        },
-        theme: {
-          color: '#00714C'
-        }
-      };
-      
-      const rzp = new window.Razorpay(options);
-      rzp.on('payment.failed', function (response){
-        alert(`Payment Failed: ${response.error.description}`);
-      });
-      rzp.open();
-    } catch (error) {
-      console.error('Checkout error:', error);
-      alert('Failed to initiate checkout. Please try again.');
-    } finally {
-      setPlacing(false);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.customerName || !formData.contact) return alert('Name and contact are required');
-    
-    if (formData.paymentMethod === 'Razorpay / UPI') {
-      await handlePayment();
-    } else {
-      // Offline / Cash on Delivery fallback
-      setPlacing(true);
-      try {
-        const orderPayload = {
-          customerName: formData.customerName,
-          contact: formData.contact,
-          rollNo: formData.rollNo,
-          department: formData.department,
-          items,
-          subtotal,
-          discount,
-          shipping,
-          total,
-          fulfillment: fulfillment === 'campus' ? 'Campus Pickup (Kinathukadavu 3D Lab)' : 'BlueDart Express Courier',
-          address: formData.address,
-          paymentMethod: formData.paymentMethod,
-          razorpayPaymentId: null
-        };
-        const res = await orderAPI.create(orderPayload);
-        if (res.data.success) {
-          setConfirmedOrder(res.data.data);
-          clearCart();
+    if (items.length === 0) return;
+
+    setLoading(true);
+    try {
+      // 1. Create the order first
+      const orderPayload = {
+        items: items.map(i => ({ serviceId: i.id, serviceName: i.name, quantity: i.quantity, price: i.price })),
+        totalAmount: total,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        address: formData.address,
+        paymentMethod: formData.paymentMethod,
+        notes: formData.notes
+      };
+
+      const res = await orderAPI.createOrder(orderPayload);
+      if (res.data.success) {
+        const newOrder = res.data.data;
+        clearCart();
+        
+        if (formData.paymentMethod === 'Bank/UPI Transfer') {
+          // Redirect to Payment Form Page
+          navigate(`/pay/${newOrder.id || newOrder._id}`);
+        } else {
+          // Redirect to success/track
+          navigate(`/track?id=${newOrder.id || newOrder._id}&success=true`);
         }
-      } catch (err) {
-        console.error('Checkout error:', err);
-      } finally {
-        setPlacing(false);
+      } else {
+        alert(res.data.message || 'Failed to create order');
       }
+    } catch (err) {
+      console.error(err);
+      alert('Error placing order');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -251,7 +175,7 @@ export const CheckoutPage = () => {
                 <div className="md:col-span-2">
                   <label className="block text-xs font-bold text-gray-700 mb-1.5">Payment Method</label>
                   <select value={formData.paymentMethod} onChange={e => setFormData({...formData, paymentMethod: e.target.value})} className="w-full bg-gray-50 border border-gray-300 rounded-xl p-2.5 text-sm outline-none focus:border-[#00714C] focus:bg-white">
-                    <option value="Razorpay / UPI">Razorpay / UPI (Online Checkout)</option>
+                    <option value="Bank/UPI Transfer">Bank/UPI Transfer (Manual Screenshot)</option>
                     <option value="Pay at Lab">Pay at Lab (Cash / Direct UPI)</option>
                   </select>
                 </div>
@@ -311,7 +235,7 @@ export const CheckoutPage = () => {
                 ) : (
                   <>
                     <ShieldCheck size={18} />
-                    {formData.paymentMethod === 'Razorpay / UPI' ? 'Proceed to Secure Payment' : 'Confirm Order'}
+                    {formData.paymentMethod === 'Bank/UPI Transfer' ? 'Proceed to Make Payment' : 'Confirm Order'}
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </>
                 )}

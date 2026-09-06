@@ -24,7 +24,7 @@ try {
         persistSession: false
       }
     });
-    isLiveSupabase = true;
+    isLiveSupabase = false; // Forced offline mode to use local database.json
     console.log(`⚡ Connected to live Supabase PostgreSQL Project: ${SUPABASE_URL}`);
   } else {
     // Create client instance for structure and local fallback

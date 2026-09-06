@@ -374,6 +374,18 @@ export const supabaseService = {
         updatePayload.updated_at = now;
 
         await supabase.from('products').update(updatePayload).eq('id', id);
+
+        if (cleaned.images && Array.isArray(cleaned.images)) {
+          await supabase.from('product_images').delete().eq('product_id', id);
+          const formattedImages = cleaned.images.map((img, idx) => ({
+            product_id: id,
+            url: typeof img === 'string' ? img : img.url,
+            position: idx
+          }));
+          if (formattedImages.length > 0) {
+            await supabase.from('product_images').insert(formattedImages);
+          }
+        }
       } catch (e) {
         console.warn('Supabase updateProduct warning:', e.message);
       }
@@ -840,6 +852,144 @@ export const supabaseService = {
     local.pageContent = (local.pageContent || []).filter(c => c.id !== id);
     saveLocal(local);
     return true;
+  },
+
+  // PAYMENT SETTINGS
+  async getPaymentSettings() {
+    if (supabase && isLiveSupabase) {
+      try {
+        const { data, error } = await supabase.from('app_payment_settings').select('*').limit(1).maybeSingle();
+        if (!error && data) {
+          return {
+            id: data.id,
+            accountHolderName: data.account_holder_name,
+            bankName: data.bank_name,
+            accountNumber: data.account_number,
+            ifscCode: data.ifsc_code,
+            upiId: data.upi_id,
+            isActive: data.is_active
+          };
+        }
+      } catch (e) { console.warn('Supabase getPaymentSettings error:', e.message); }
+    }
+    const local = loadLocal();
+    return local.paymentSettings || {
+      id: 'default-settings',
+      accountHolderName: 'THE PRINCIPAL AKSHAYA COLLEGE OF ENGINEERING AND TECHNOLOGY',
+      bankName: 'South Indian Bank - Kinathukadavu',
+      accountNumber: '0034053000013214',
+      ifscCode: 'SIBL0000034',
+      upiId: 'Not Available',
+      isActive: true
+    };
+  },
+
+  async updatePaymentSettings(settingsData) {
+    const docData = {
+      account_holder_name: settingsData.accountHolderName,
+      bank_name: settingsData.bankName,
+      account_number: settingsData.accountNumber,
+      ifsc_code: settingsData.ifscCode,
+      upi_id: settingsData.upiId,
+      is_active: settingsData.isActive !== false,
+      updated_at: new Date().toISOString()
+    };
+    if (supabase && isLiveSupabase) {
+      try {
+        const { data: existing } = await supabase.from('app_payment_settings').select('id').limit(1).maybeSingle();
+        if (existing) {
+          await supabase.from('app_payment_settings').update(docData).eq('id', existing.id);
+        } else {
+          await supabase.from('app_payment_settings').insert([docData]);
+        }
+      } catch (e) { console.warn('Supabase updatePaymentSettings error:', e.message); }
+    }
+    const local = loadLocal();
+    local.paymentSettings = { id: 'default-settings', ...settingsData, updatedAt: new Date().toISOString() };
+    saveLocal(local);
+    return local.paymentSettings;
+  },
+
+  // PAYMENTS
+  async createPayment(paymentData) {
+    const now = new Date().toISOString();
+    const docData = {
+      order_id: paymentData.orderId,
+      amount_due: paymentData.amountDue,
+      buyer_contact_name: paymentData.buyerContactName,
+      buyer_contact_email: paymentData.buyerContactEmail,
+      buyer_contact_phone: paymentData.buyerContactPhone,
+      screenshot_url: paymentData.screenshotUrl || null,
+      transaction_ref_note: paymentData.transactionRefNote || null,
+      status: paymentData.status || 'awaiting_screenshot',
+      submitted_at: now,
+      created_at: now
+    };
+    if (supabase && isLiveSupabase) {
+      try {
+        const { data, error } = await supabase.from('app_payments').insert([docData]).select().single();
+        if (!error && data) return { id: data.id, ...paymentData };
+      } catch (e) { console.warn('Supabase createPayment error:', e.message); }
+    }
+    const local = loadLocal();
+    local.payments = local.payments || [];
+    const newPayment = { id: 'pay_' + Date.now(), ...paymentData, submittedAt: now, createdAt: now };
+    local.payments.push(newPayment);
+    saveLocal(local);
+    return newPayment;
+  },
+
+  async getPayments(statusFilter) {
+    if (supabase && isLiveSupabase) {
+      try {
+        let query = supabase.from('app_payments').select('*, order:app_orders(*)').order('created_at', { ascending: false });
+        if (statusFilter) query = query.eq('status', statusFilter);
+        const { data, error } = await query;
+        if (!error && data) {
+          return data.map(d => ({
+            id: d.id,
+            orderId: d.order_id,
+            amountDue: d.amount_due,
+            buyerContactName: d.buyer_contact_name,
+            buyerContactEmail: d.buyer_contact_email,
+            buyerContactPhone: d.buyer_contact_phone,
+            screenshotUrl: d.screenshot_url,
+            transactionRefNote: d.transaction_ref_note,
+            status: d.status,
+            submittedAt: d.submitted_at,
+            createdAt: d.created_at,
+            order: d.order ? { id: d.order.id, _id: d.order.id, status: d.order.status } : null
+          }));
+        }
+      } catch (e) { console.warn('Supabase getPayments error:', e.message); }
+    }
+    const local = loadLocal();
+    let payments = local.payments || [];
+    if (statusFilter) payments = payments.filter(p => p.status === statusFilter);
+    return payments.reverse();
+  },
+
+  async updatePayment(id, updateData) {
+    const docData = { updated_at: new Date().toISOString() };
+    if (updateData.status) docData.status = updateData.status;
+    if (updateData.screenshotUrl) docData.screenshot_url = updateData.screenshotUrl;
+    if (updateData.verifiedByAdminUid) docData.verified_by_admin_uid = updateData.verifiedByAdminUid;
+    if (updateData.verifiedAt) docData.verified_at = updateData.verifiedAt;
+
+    if (supabase && isLiveSupabase) {
+      try {
+        await supabase.from('app_payments').update(docData).eq('id', id);
+      } catch (e) { console.warn('Supabase updatePayment error:', e.message); }
+    }
+    const local = loadLocal();
+    local.payments = local.payments || [];
+    const idx = local.payments.findIndex(p => p.id === id);
+    if (idx !== -1) {
+      local.payments[idx] = { ...local.payments[idx], ...updateData };
+      saveLocal(local);
+      return local.payments[idx];
+    }
+    return null;
   }
 };
 

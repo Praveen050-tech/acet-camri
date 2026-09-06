@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { adminAPI, orderAPI, customRequestAPI, productAPI, settingsAPI, uploadAPI, pageContentAPI } from '../api/client';
 // Media icons handled via existing Box import
 import axios from 'axios';
+import { MediaUploader } from '../components/admin/MediaUploader';
 import { 
   ShieldCheck, Box, RefreshCw, CheckCircle2, Clock, Layers, 
   AlertCircle, LogOut, Plus, Trash2, Edit3, MessageSquare, ExternalLink, X, Settings, FileText 
@@ -45,7 +46,7 @@ export const AdminDashboard = () => {
   const [editUploadedModel3d, setEditUploadedModel3d] = useState('');
   const [mediaUploading, setMediaUploading] = useState(false);
 
-  // Page Content CMS State
+  // Edit Website Pages State
   const [pageContentBlocks, setPageContentBlocks] = useState([]);
   const [selectedPageSlug, setSelectedPageSlug] = useState('facilities');
   const [isAddContentModalOpen, setIsAddContentModalOpen] = useState(false);
@@ -245,6 +246,7 @@ const handleCreateProduct = async (e) => {
 
   const handleEditClick = (product) => {
     setEditProductId(product.id);
+    setEditUploadedImages(product.images && product.images.length ? product.images.map(i => typeof i === 'string' ? i : i.url) : (product.image ? [product.image] : []));
     setEditProductData({
       title: product.title || '',
       category: product.category || 'college-merch',
@@ -432,7 +434,7 @@ const handleCreateProduct = async (e) => {
             activeTab === 'pages' ? 'bg-[#00714C] text-white shadow-xs' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'
           }`}
         >
-           Page Content CMS
+           Edit Website Pages
         </button>
       </div>
 
@@ -648,7 +650,22 @@ const handleCreateProduct = async (e) => {
         </div>
       )}
 
-      {/* Tab: Page Content CMS */}
+
+      {/* Tab: Pending Payments */}
+      {activeTab === 'payments' && (
+        <div className="animate-fadeIn">
+          <AdminPaymentsTab />
+        </div>
+      )}
+
+      {/* Tab: Payment Settings */}
+      {activeTab === 'payment-settings' && (
+        <div className="animate-fadeIn">
+          <AdminPaymentSettingsTab />
+        </div>
+      )}
+
+      {/* Tab: Edit Website Pages */}
       {activeTab === 'pages' && (
         <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-xs">
           <div className="p-4 border-b border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-gray-50">
@@ -873,15 +890,10 @@ const handleCreateProduct = async (e) => {
                 </div>
               </div>
 
-              <div>
-                <label className="font-bold text-gray-700 block mb-1">Image URL</label>
-                <input 
-                  type="url"
-                  value={newProduct.image}
-                  onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
-                  className="w-full bg-gray-50 border border-gray-300 rounded-xl p-2.5 text-gray-900 focus:outline-none focus:border-[#00714C]"
-                />
-              </div>
+              <MediaUploader 
+                mediaUrls={uploadedImages} 
+                setMediaUrls={setUploadedImages} 
+              />
 
               <div>
                 <label className="font-bold text-gray-700 block mb-1">Product Description</label>
@@ -989,15 +1001,10 @@ const handleCreateProduct = async (e) => {
                 </div>
               </div>
 
-              <div>
-                <label className="font-bold text-gray-700 block mb-1">Image URL</label>
-                <input 
-                  type="url"
-                  value={editProductData.image}
-                  onChange={(e) => setEditProductData({ ...editProductData, image: e.target.value })}
-                  className="w-full bg-gray-50 border border-gray-300 rounded-xl p-2.5 text-gray-900 focus:outline-none focus:border-[#00714C]"
-                />
-              </div>
+              <MediaUploader 
+                mediaUrls={editUploadedImages} 
+                setMediaUrls={setEditUploadedImages} 
+              />
 
               <div>
                 <label className="font-bold text-gray-700 block mb-1">Product Description</label>
