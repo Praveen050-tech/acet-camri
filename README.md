@@ -99,3 +99,4 @@ GET    /api/admin/stats                # 8-bed print farm monitor & revenue metr
 GET    /api/reviews/:productId         # Fetch verified student reviews
 POST   /api/reviews                    # Submit product review
 ```
+<!-- redeploy trigger -->
