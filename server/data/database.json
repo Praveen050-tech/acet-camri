@@ -1006,15 +1006,11 @@
       "description": "A traditional seated Ganesh figurine. Highly detailed, making it suitable for home or office altars and as a thoughtful gift. Resin printing is recommended to capture the finer details.",
       "category": "figurines",
       "basePrice": 400,
-      "salePrice": null,
+      "salePrice": 500,
       "stockQuantity": 25,
       "stock": 25,
       "images": [
-        {
-          "id": "img-lord-ganesh-idol-0",
-          "url": "https://images.unsplash.com/photo-1590022419747-d1d6dd8b939e?auto=format&fit=crop&q=80&w=800",
-          "position": 0
-        }
+        "https://images.unsplash.com/photo-1590022419747-d1d6dd8b939e?auto=format&fit=crop&q=80&w=800"
       ],
       "materials": [
         {
@@ -1047,7 +1043,14 @@
       "ratingCount": 0,
       "isActive": true,
       "createdAt": "2026-09-06T08:53:50.876Z",
-      "updatedAt": "2026-09-06T08:53:50.876Z"
+      "updatedAt": "2026-09-06T11:17:54.010Z",
+      "title": "Lord Ganesh Idol",
+      "categoryLabel": "figurines",
+      "regularPrice": 400,
+      "image": "https://images.unsplash.com/photo-1590022419747-d1d6dd8b939e?auto=format&fit=crop&q=80&w=800",
+      "badge": "",
+      "videos": [],
+      "model3d": ""
     },
     {
       "id": "lord-shiva-idol",

@@ -107,7 +107,7 @@ export const CartDrawer = () => {
                     <h5 className="text-xs font-bold text-gray-900 truncate">{item.title}</h5>
                     <div className="text-[11px] text-[#00714C] font-semibold mt-0.5">{item.material} • {item.size}</div>
                     <div className="flex items-center justify-between mt-2">
-                      <span className="text-xs font-bold text-gray-900">₹{item.price.toLocaleString('en-IN')}</span>
+                      <span className="text-xs font-bold text-gray-900">₹{item.price?.toLocaleString('en-IN')}</span>
                       
                       <div className="flex items-center border border-gray-300 rounded-lg bg-white shadow-2xs">
                         <button 
@@ -188,12 +188,12 @@ export const CartDrawer = () => {
               <div className="space-y-1.5 text-xs text-gray-600 pt-2 border-t border-gray-200">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="font-semibold text-gray-800">₹{subtotal.toLocaleString('en-IN')}</span>
+                  <span className="font-semibold text-gray-800">₹{subtotal?.toLocaleString('en-IN')}</span>
                 </div>
                 {discount > 0 && (
                   <div className="flex justify-between text-[#00714C] font-bold">
                     <span>Club Discount (20%)</span>
-                    <span>-₹{discount.toLocaleString('en-IN')}</span>
+                    <span>-₹{discount?.toLocaleString('en-IN')}</span>
                   </div>
                 )}
                 <div className="flex justify-between">
@@ -202,7 +202,7 @@ export const CartDrawer = () => {
                 </div>
                 <div className="flex justify-between text-sm font-bold text-gray-900 pt-1.5 border-t border-gray-200">
                   <span>Total (Incl. GST)</span>
-                  <span className="text-[#00714C] text-lg font-black">₹{total.toLocaleString('en-IN')}</span>
+                  <span className="text-[#00714C] text-lg font-black">₹{total?.toLocaleString('en-IN')}</span>
                 </div>
               </div>
 

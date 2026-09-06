@@ -100,6 +100,9 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
+// Serve uploaded files
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // Serve frontend static files
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(express.static(path.join(__dirname, '../')));

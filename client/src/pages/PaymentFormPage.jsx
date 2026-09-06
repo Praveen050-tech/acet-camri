@@ -1,9 +1,9 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { CheckCircle, Copy, Camera, ArrowRight, AlertCircle, UploadCloud } from 'lucide-react';
-import { orderAPI } from '../services/api';
+import { CheckCircle, Copy, ArrowRight, AlertCircle, UploadCloud } from 'lucide-react';
+import { orderAPI, paymentAPI, uploadAPI } from '../api/client';
 
-const PaymentFormPage = () => {
+export const PaymentFormPage = () => {
   const { orderId } = useParams();
   const navigate = useNavigate();
   
@@ -16,6 +16,14 @@ const PaymentFormPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [copied, setCopied] = useState('');
 
+  // Bank details - FIXED, not changeable
+  const BANK_DETAILS = {
+    name: 'THE PRINCIPAL AKSHAYA COLLEGE OF ENGINEERING AND TECHNOLOGY',
+    accountNumber: '0034053000013214',
+    ifscCode: 'SIBL0000034',
+    branch: 'Kinathukadavu'
+  };
+
   useEffect(() => {
     const fetchOrder = async () => {
       try {
@@ -23,9 +31,10 @@ const PaymentFormPage = () => {
         if (res.data.success) {
           setOrder(res.data.data);
         } else {
-          setError(res.data.message);
+          setError(res.data.message || 'Order not found');
         }
       } catch (err) {
+        console.error(err);
         setError('Failed to load order details.');
       } finally {
         setLoading(false);
@@ -61,14 +70,30 @@ const PaymentFormPage = () => {
     
     setSubmitting(true);
     try {
-      const formPayload = new FormData();
-      formPayload.append('screenshot', screenshotFile);
-      
-      const res = await orderAPI.uploadPayment(orderId, formPayload);
+      let screenshotUrl = '';
+      try {
+        const uploadForm = new FormData();
+        uploadForm.append('file', screenshotFile);
+        const uploadRes = await uploadAPI.uploadCadFile(uploadForm);
+        if (uploadRes.data.success || uploadRes.data.url) {
+          screenshotUrl = uploadRes.data.url || uploadRes.data.data?.url || '';
+        }
+      } catch (uploadErr) {
+        screenshotUrl = screenshotPreview;
+      }
+
+      const paymentData = {
+        screenshotUrl: screenshotUrl || screenshotPreview,
+        buyerContactName: order?.customerName || '',
+        buyerContactEmail: order?.email || '',
+        buyerContactPhone: order?.contact || ''
+      };
+
+      const res = await paymentAPI.submitPayment(orderId, paymentData);
       if (res.data.success) {
-        navigate('/payment-success?order=' + orderId);
+        navigate('/track?id=' + orderId + '&success=true');
       } else {
-        alert('Failed to submit: ' + res.data.message);
+        alert('Failed to submit payment: ' + (res.data.message || 'Unknown error'));
         setSubmitting(false);
       }
     } catch (err) {
@@ -105,8 +130,11 @@ const PaymentFormPage = () => {
     <div className="min-h-screen pt-24 pb-12 bg-gray-50 px-4 sm:px-6">
       <div className="max-w-md mx-auto">
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">Payment</h1>
-          <p className="text-gray-600 mt-1">Amount Due: ₹{order.totalAmount.toFixed(2)}</p>
+          <h1 className="font-['Cinzel'] text-2xl font-bold text-gray-900">Payment</h1>
+          <p className="text-gray-600 mt-1">
+            Amount Due: <span className="font-bold text-[#00714C] text-lg">\u20B9{order.totalAmount?.toFixed ? order.totalAmount.toFixed(2) : order.totalAmount}</span>
+          </p>
+          <p className="text-xs text-gray-400 mt-1">Order #{orderId}</p>
         </div>
 
         <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-200 mb-6 relative overflow-hidden">
@@ -117,15 +145,15 @@ const PaymentFormPage = () => {
           <div className="space-y-4">
             <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
               <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Name of the Account</p>
-              <p className="font-semibold text-gray-900 leading-tight">THE PRINCIPAL AKSHAYA COLLEGE OF ENGINEERING AND TECHNOLOGY</p>
+              <p className="font-semibold text-gray-900 leading-tight text-sm">{BANK_DETAILS.name}</p>
             </div>
             
             <div className="flex justify-between items-center bg-gray-50 p-4 rounded-xl border border-gray-100">
               <div>
                 <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Account Number</p>
-                <p className="font-semibold text-gray-900 text-lg tracking-wide font-mono">0034053000013214</p>
+                <p className="font-semibold text-gray-900 text-lg tracking-wide font-mono">{BANK_DETAILS.accountNumber}</p>
               </div>
-              <button onClick={() => handleCopy('0034053000013214', 'acc')} className="p-2 bg-white rounded-lg shadow-sm text-gray-500 hover:text-[#00714C] transition-colors border border-gray-200">
+              <button onClick={() => handleCopy(BANK_DETAILS.accountNumber, 'acc')} className="p-2 bg-white rounded-lg shadow-sm text-gray-500 hover:text-[#00714C] transition-colors border border-gray-200">
                 {copied === 'acc' ? <CheckCircle size={20} className="text-green-500" /> : <Copy size={20} />}
               </button>
             </div>
@@ -133,16 +161,16 @@ const PaymentFormPage = () => {
             <div className="flex justify-between items-center bg-gray-50 p-4 rounded-xl border border-gray-100">
               <div>
                 <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">IFSC Code</p>
-                <p className="font-semibold text-gray-900 text-lg tracking-wide font-mono">SIBL0000034</p>
+                <p className="font-semibold text-gray-900 text-lg tracking-wide font-mono">{BANK_DETAILS.ifscCode}</p>
               </div>
-              <button onClick={() => handleCopy('SIBL0000034', 'ifsc')} className="p-2 bg-white rounded-lg shadow-sm text-gray-500 hover:text-[#00714C] transition-colors border border-gray-200">
+              <button onClick={() => handleCopy(BANK_DETAILS.ifscCode, 'ifsc')} className="p-2 bg-white rounded-lg shadow-sm text-gray-500 hover:text-[#00714C] transition-colors border border-gray-200">
                 {copied === 'ifsc' ? <CheckCircle size={20} className="text-green-500" /> : <Copy size={20} />}
               </button>
             </div>
             
             <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
               <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Branch Name</p>
-              <p className="font-semibold text-gray-900">Kinathukadavu</p>
+              <p className="font-semibold text-gray-900">{BANK_DETAILS.branch}</p>
             </div>
           </div>
         </div>

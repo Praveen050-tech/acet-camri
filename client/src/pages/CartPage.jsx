@@ -69,7 +69,7 @@ export const CartPage = () => {
                     {item.title}
                   </Link>
                   <div className="text-xs text-[#00714C] font-semibold mt-0.5">{item.material} • {item.size}</div>
-                  <div className="text-xs font-bold text-gray-900 mt-1">₹{item.price.toLocaleString('en-IN')}</div>
+                  <div className="text-xs font-bold text-gray-900 mt-1">₹{item.price?.toLocaleString('en-IN')}</div>
                 </div>
               </div>
 
@@ -91,7 +91,7 @@ export const CartPage = () => {
                 </div>
 
                 <div className="font-black text-gray-900 text-base">
-                  ₹{(item.price * item.quantity).toLocaleString('en-IN')}
+                  ₹{(item.price * item.quantity)?.toLocaleString('en-IN')}
                 </div>
 
                 <button 
@@ -166,12 +166,12 @@ export const CartPage = () => {
           <div className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-4">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span>₹{subtotal.toLocaleString('en-IN')}</span>
+              <span>₹{subtotal?.toLocaleString('en-IN')}</span>
             </div>
             {discount > 0 && (
               <div className="flex justify-between text-[#00714C] font-bold">
                 <span>Club Discount (20%)</span>
-                <span>-₹{discount.toLocaleString('en-IN')}</span>
+                <span>-₹{discount?.toLocaleString('en-IN')}</span>
               </div>
             )}
             <div className="flex justify-between">
@@ -180,7 +180,7 @@ export const CartPage = () => {
             </div>
             <div className="flex justify-between text-base font-bold text-gray-900 pt-2 border-t border-gray-100">
               <span>Total Amount</span>
-              <span className="text-[#00714C] text-xl font-black">₹{total.toLocaleString('en-IN')}</span>
+              <span className="text-[#00714C] text-xl font-black">₹{total?.toLocaleString('en-IN')}</span>
             </div>
           </div>
 

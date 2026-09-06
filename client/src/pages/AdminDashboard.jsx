@@ -135,12 +135,12 @@ export const AdminDashboard = () => {
 
   const handleMediaUpload = async (file, type, isEdit = false) => {
     const formPayload = new FormData();
-    formPayload.append('cadFile', file);
+    formPayload.append('file', file);
     setMediaUploading(true);
     try {
       const res = await uploadAPI.uploadCadFile(formPayload);
       if (res.data.success) {
-        const url = res.data.fileUrl;
+        const url = res.data.data?.url || res.data.fileUrl;
         if (type === 'image') {
           if (isEdit) setEditUploadedImages(prev => [...prev, url]);
           else setUploadedImages(prev => [...prev, url]);

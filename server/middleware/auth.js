@@ -1,6 +1,4 @@
-import jwt from 'jsonwebtoken';
-
-const JWT_SECRET = process.env.JWT_SECRET || 'acet_3d_printing_club_jwt_secret_kinathukadavu_2026';
+import { supabase } from '../config/supabase.js';
 
 export const protect = async (req, res, next) => {
   let token;
@@ -9,15 +7,21 @@ export const protect = async (req, res, next) => {
     try {
       token = req.headers.authorization.split(' ')[1];
 
-      const decoded = jwt.verify(token, JWT_SECRET);
+      const { data: { user }, error } = await supabase.auth.getUser(token);
+      
+      if (error || !user) {
+        return res.status(401).json({ success: false, message: 'Not authorized, invalid Supabase authentication token' });
+      }
+
       req.user = { 
-        _id: decoded.id || decoded.uid || 'acet-admin-01', 
-        uid: decoded.uid || decoded.id,
-        name: decoded.name || 'ACET 3D Club Lead', 
-        email: decoded.email || 'admin@acetcbe.edu.in',
-        role: decoded.role || 'admin',
-        admin: decoded.admin === true || decoded.role === 'admin'
+        _id: user.id, 
+        uid: user.id,
+        name: user.user_metadata?.full_name || user.email?.split('@')[0] || 'ACET User', 
+        email: user.email,
+        role: user.user_metadata?.role || 'user',
+        admin: user.user_metadata?.admin === true || user.user_metadata?.role === 'admin'
       };
+      
       return next();
     } catch (error) {
       return res.status(401).json({ success: false, message: 'Not authorized, invalid authentication token' });
@@ -37,20 +41,23 @@ export const adminOnly = (req, res, next) => {
   }
 };
 
-// Buyer authentication middleware — verifies the buyer is logged in
 export const buyerProtect = async (req, res, next) => {
   let token;
 
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
     try {
       token = req.headers.authorization.split(' ')[1];
-      const decoded = jwt.verify(token, JWT_SECRET);
+      const { data: { user }, error } = await supabase.auth.getUser(token);
+      
+      if (error || !user) {
+        return res.status(401).json({ success: false, message: 'Session expired. Please log in again.' });
+      }
       
       req.buyer = {
-        uid: decoded.uid || decoded.id,
-        name: decoded.name,
-        email: decoded.email,
-        role: decoded.role
+        uid: user.id,
+        name: user.user_metadata?.full_name || user.email?.split('@')[0],
+        email: user.email,
+        role: user.user_metadata?.role || 'user'
       };
       return next();
     } catch (error) {

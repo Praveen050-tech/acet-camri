@@ -94,7 +94,7 @@ export const CustomOrderPage = () => {
             </div>
             <div className="flex justify-between">
               <span className="text-gray-500">Estimated Price:</span>
-              <strong className="text-gray-900 font-bold">₹{submittedRequest.estimatedPrice.toLocaleString('en-IN')}</strong>
+              <strong className="text-gray-900 font-bold">₹{submittedRequest.estimatedPrice?.toLocaleString('en-IN')}</strong>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-500">Estimated Slicing Turnaround:</span>
@@ -302,7 +302,7 @@ export const CustomOrderPage = () => {
             {/* Price Tag */}
             <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200 text-center shadow-2xs">
               <div className="font-['Readex_Pro'] text-4xl font-black text-[#00714C]">
-                ₹{estimatedPrice.toLocaleString('en-IN')}
+                ₹{estimatedPrice?.toLocaleString('en-IN')}
               </div>
               <span className="text-[11px] text-gray-500 mt-1 block">Includes manufacturing & taxes</span>
             </div>

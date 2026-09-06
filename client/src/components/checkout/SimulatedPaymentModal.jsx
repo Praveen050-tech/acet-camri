@@ -30,7 +30,7 @@ export const SimulatedPaymentModal = ({ total, customerName, onSuccess, onFailur
               <ShieldCheck size={16} />
               Razorpay Simulation
             </div>
-            <div className="text-2xl font-bold text-white">₹{total.toLocaleString('en-IN')}</div>
+            <div className="text-2xl font-bold text-white">₹{total?.toLocaleString('en-IN')}</div>
             <div className="text-xs text-blue-200 mt-0.5">ACET CAMRI Store</div>
           </div>
           <button onClick={onClose} disabled={processing} className="text-gray-400 hover:text-white transition-colors">

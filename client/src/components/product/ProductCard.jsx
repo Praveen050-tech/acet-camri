@@ -86,10 +86,10 @@ export const ProductCard = ({ product, onQuick3D }) => {
           <div className="flex items-center justify-between pt-1">
             <div className="flex items-baseline gap-1.5 font-['Readex_Pro']">
               <span className="font-extrabold text-base text-[#00714C]">
-                ₹{product.salePrice.toLocaleString('en-IN')}
+                ₹{product.salePrice?.toLocaleString('en-IN')}
               </span>
               <span className="text-xs text-gray-400 line-through">
-                ₹{product.regularPrice.toLocaleString('en-IN')}
+                ₹{product.regularPrice?.toLocaleString('en-IN')}
               </span>
             </div>
 

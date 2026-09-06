@@ -236,10 +236,10 @@ export const ProductPage = () => {
           {/* Pricing Row */}
           <div className="flex items-baseline gap-3 p-5 rounded-2xl bg-white border border-gray-200 shadow-sm">
             <span className="font-['Outfit'] text-3xl font-black text-[#00714C]">
-              ₹{currentPrice.toLocaleString('en-IN')}
+              ₹{currentPrice?.toLocaleString('en-IN')}
             </span>
             <span className="text-sm text-gray-400 line-through">
-              ₹{product.regularPrice.toLocaleString('en-IN')}
+              ₹{product.regularPrice?.toLocaleString('en-IN')}
             </span>
             <span className="text-xs bg-[#eef9f3] text-[#00714C] font-bold px-2.5 py-1 rounded-full ml-auto">
               Save ₹{product.regularPrice - product.salePrice}

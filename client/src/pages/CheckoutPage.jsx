@@ -22,6 +22,41 @@ export const CheckoutPage = () => {
   const [placing, setPlacing] = useState(false);
   const [confirmedOrder, setConfirmedOrder] = useState(null);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setPlacing(true);
+    try {
+      const orderPayload = {
+        items: items.map(i => ({
+          serviceId: i.id,
+          serviceName: i.name,
+          quantity: i.quantity,
+          price: i.price,
+        })),
+        totalAmount: total,
+        customerName: formData.customerName,
+        contact: formData.contact,
+        rollNo: formData.rollNo,
+        department: formData.department,
+        address: formData.address,
+        paymentMethod: formData.paymentMethod,
+        fulfillment: fulfillment,
+      };
+      const { data: newOrder } = await orderAPI.createOrder(orderPayload);
+      if (formData.paymentMethod === 'Bank/UPI Transfer') {
+        navigate('/payment', { state: { orderId: newOrder.id } });
+      } else {
+        setConfirmedOrder(newOrder);
+        clearCart();
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Failed to place order. Please try again.');
+    } finally {
+      setPlacing(false);
+    }
+  };
+
   if (!isBuyerLoggedIn) {
     return (
       <div className="container mx-auto px-4 py-24 text-center bg-white">
@@ -54,48 +89,6 @@ export const CheckoutPage = () => {
       </div>
     );
   }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (items.length === 0) return;
-
-    setLoading(true);
-    try {
-      // 1. Create the order first
-      const orderPayload = {
-        items: items.map(i => ({ serviceId: i.id, serviceName: i.name, quantity: i.quantity, price: i.price })),
-        totalAmount: total,
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        address: formData.address,
-        paymentMethod: formData.paymentMethod,
-        notes: formData.notes
-      };
-
-      const res = await orderAPI.createOrder(orderPayload);
-      if (res.data.success) {
-        const newOrder = res.data.data;
-        clearCart();
-        
-        if (formData.paymentMethod === 'Bank/UPI Transfer') {
-          // Redirect to Payment Form Page
-          navigate(`/pay/${newOrder.id || newOrder._id}`);
-        } else {
-          // Redirect to success/track
-          navigate(`/track?id=${newOrder.id || newOrder._id}&success=true`);
-        }
-      } else {
-        alert(res.data.message || 'Failed to create order');
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Error placing order');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="container mx-auto px-4 py-10 max-w-4xl space-y-8 bg-white">

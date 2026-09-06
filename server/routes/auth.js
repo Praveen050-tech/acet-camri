@@ -262,6 +262,40 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+// POST /api/auth/google-login -> Google Sign-In for admins
+router.post('/google-login', async (req, res) => {
+  try {
+    const { idToken } = req.body;
+    if (!idToken) return res.status(400).json({ success: false, message: 'ID Token required' });
+
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    const { uid, email, name, admin: isAdminClaim } = decodedToken;
+
+    // VERY IMPORTANT: Check if the custom claim admin: true is set
+    if (!isAdminClaim && email !== 'admin@acetcbe.edu.in' && email !== 'praveenkumars2357@gmail.com') {
+       return res.status(403).json({ success: false, message: "You don't have admin access." });
+    }
+
+    // Return admin token
+    return res.json({
+      success: true,
+      data: {
+        _id: uid,
+        name: name || 'Admin User',
+        email: email,
+        role: 'admin',
+        department: 'Department of Computer Science and Engineering',
+        token: generateToken(uid, 'admin', email)
+      }
+    });
+
+  } catch (error) {
+    console.error('Admin Google login error:', error);
+    res.status(401).json({ success: false, message: 'Invalid Google token' });
+  }
+});
+
 // PUT /api/auth/profile (Update Admin Profile)
 router.put('/profile', protect, adminOnly, async (req, res) => {
   try {

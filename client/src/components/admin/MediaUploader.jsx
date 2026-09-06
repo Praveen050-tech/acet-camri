@@ -18,8 +18,8 @@ export const MediaUploader = ({ mediaUrls, setMediaUrls }) => {
         const formData = new FormData();
         formData.append('file', file);
         const res = await uploadAPI.uploadCadFile(formData); // Using same upload logic
-        if (res.data.success && res.data.fileUrl) {
-          newUrls.push(res.data.fileUrl);
+        if (res.data.success && (res.data.data?.url || res.data.fileUrl)) {
+          newUrls.push(res.data.data?.url || res.data.fileUrl);
         }
       } catch (err) {
         console.error('Failed to upload file:', file.name, err);

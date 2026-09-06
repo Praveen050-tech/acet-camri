@@ -39,8 +39,11 @@ export const customRequestAPI = {
   approve: (id, bedData) => api.put(`/custom-requests/${id}/approve`, bedData)
 };
 
+
 export const authAPI = {
   login: (credentials) => api.post('/auth/login', credentials),
+  googleLogin: (idToken) => api.post('/auth/google-login', { idToken }),
+
   getMe: () => api.get('/auth/me'),
   updateProfile: (data) => api.put('/auth/profile', data)
 };
@@ -85,9 +88,9 @@ export const pageContentAPI = {
 export const paymentAPI = {
   getSettings: () => api.get('/payment/settings'),
   updateSettings: (data) => api.put('/payment/settings', data),
-  submitPayment: (orderId, data) => api.post(/payment//submit, data),
+  submitPayment: (orderId, data) => api.post(`/payment/${orderId}/submit`, data),
   getPending: () => api.get('/payment/pending'),
-  verify: (id) => api.patch(/payment//verify),
-  reject: (id, reason) => api.patch(/payment//reject, { reason })
+  verify: (id) => api.patch(`/payment/${id}/verify`),
+  reject: (id, reason) => api.patch(`/payment/${id}/reject`, { reason })
 };
 
