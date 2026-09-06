@@ -7,7 +7,6 @@
 > **Architecture Pattern:** SILAII e-commerce layout DNA + Akshaya College institutional brand system  
 
 ---
-
 ## 🛠️ Technology Stack
 
 | Layer | Technology |
