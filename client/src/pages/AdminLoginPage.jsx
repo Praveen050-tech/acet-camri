@@ -12,7 +12,7 @@ export const AdminLoginPage = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const { login, googleLogin, loading } = useAuth();
+  const { login, googleLogin, loading, isAuthenticated } = useAuth();
 
   const handleGoogleSignIn = async () => {
     setError('');
@@ -33,6 +33,12 @@ export const AdminLoginPage = () => {
   };
 
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (isAuthenticated && !loading) {
+      navigate('/admin');
+    }
+  }, [isAuthenticated, loading, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();

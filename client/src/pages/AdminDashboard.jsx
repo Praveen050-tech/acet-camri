@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 
 export const AdminDashboard = () => {
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated, logout, loading: authLoading } = useAuth();
   const navigate = useNavigate();
 
   const [stats, setStats] = useState(null);
@@ -163,13 +163,14 @@ export const AdminDashboard = () => {
   const [updatingProduct, setUpdatingProduct] = useState(false);
   const [editProductData, setEditProductData] = useState({});
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!authLoading && !isAuthenticated) {
       navigate('/admin/login');
       return;
     }
-
-    fetchAdminData();
-  }, [isAuthenticated, navigate]);
+    if (isAuthenticated) {
+      fetchAdminData();
+    }
+  }, [isAuthenticated, authLoading, navigate]);
 
   const fetchAdminData = async () => {
     setLoading(true);
@@ -317,6 +318,7 @@ const handleCreateProduct = async (e) => {
     }
   };
 
+  if (authLoading) return <div className="flex justify-center items-center h-screen"><div className="w-8 h-8 border-4 border-[#00714C] border-t-transparent rounded-full animate-spin"></div></div>;
   if (!isAuthenticated) return null;
 
   return (
